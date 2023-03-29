@@ -1,6 +1,7 @@
 class main():
     def MatRas():
-        my_list=["english","English","pershin"]
+        
+        my_list = ["english", "English", "persian", "Persian"]
         n=0
 
         print("hi , welcome\n")
