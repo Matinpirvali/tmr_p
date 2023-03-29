@@ -5,23 +5,23 @@ An artificial intelligence aimed at helping humans and students
 
 # 📥 Install App & requirements
 
-`git clone https://github.com/Matinpirvali/tmr_p.git`
+`$ git clone https://github.com/Matinpirvali/tmr_p.git`
 
-`cd tmr_p`
+`$ cd tmr_p`
 
-`pip install -r requirements.txt`
+`$ pip install -r requirements.txt`
 
 # ▶️ Run 
 
 run Backend app (Unix-Terminal)
 
-`python3 Backend_main.py`
+`$ python3 Backend_main.py`
 
 run GUI app
 
-`cd GUI`
+`$ cd GUI`
 
-`python3 app.py`
+`$ python3 app.py`
 
 # 📦 Requirements
 
