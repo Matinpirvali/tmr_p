@@ -1,23 +1,40 @@
 try:
-    from datetime import datetime
-    import os
     import platform
     import subprocess
+    import datetime
+    import requests
+
+    from datetime import datetime
+    from os import system
     from datetime import datetime
     from tkinter import *
-    import requests
+    
+    system('clear')
 except ModuleNotFoundError:
-    print('Pelease install requirements.txt\nwith "pip install -r requirements.txt"')
-
+    print('Script need Python3\nPelease install requirements : \nwith "pip install -r requirements.txt"')
 
 class main:
-    
     def log():
-        time_log = str(datetime.now())
+        url='http://www.google.com/'
+        timeout=5
+        status = ''
+
+        try:
+            _ = requests.head(url, timeout=timeout)
+            status += 'Online'
+        except requests.ConnectionError:
+            status += 'Offline'
+            print("No internet connection available.")
+        
+        #Ip
+        ip = requests.get('https://api.ipify.org').text
+
+        # Time & platform 
+        time_log = datetime.date.today()
         platform_log = str(platform.platform())
         path = 'data/log.json'
 
-        furme = '{\n    "time": "'+time_log+'",\n    "system": "'+platform_log+'"\n}\n'
+        furme = '{\n    "time": "'+time_log+'",\n    "system": "'+platform_log+'",\n    "IP": "'+ip+'",\n    "status": "'+status+'"\n}\n'
 
         # Save log
         log = open(path, 'a')
@@ -46,4 +63,3 @@ class main:
 
 if __name__ == "__main__":
     main.log()
-    main.Bot()
