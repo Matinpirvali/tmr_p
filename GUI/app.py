@@ -1,20 +1,20 @@
 try:
     import platform
     import subprocess
-    import datetime
     import requests
 
     from datetime import datetime
     from os import system
     from datetime import datetime
     from tkinter import *
-    
+
     system('clear')
 except ModuleNotFoundError:
     print('Script need Python3\nPelease install requirements : \nwith "pip install -r requirements.txt"')
 
 class main:
     def log():
+        #check network connection
         url='http://www.google.com/'
         timeout=5
         status = ''
@@ -25,12 +25,13 @@ class main:
         except requests.ConnectionError:
             status += 'Offline'
             print("No internet connection available.")
+            return False
         
-        #Ip
+        # Get ip public 
         ip = requests.get('https://api.ipify.org').text
-
+        
         # Time & platform 
-        time_log = datetime.date.today()
+        time_log = str(datetime.now())
         platform_log = str(platform.platform())
         path = 'data/log.json'
 
