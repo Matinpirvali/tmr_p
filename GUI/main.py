@@ -43,40 +43,45 @@ class main:
         log.close()
 
     def bot():
-        def chat_panel_fa():
-            root = Tk()
-            root.title('TMR-P-fa')
-            root.geometry('500x600')
-            root.configure(bg="#2D2727")
-
-            Banner = Label(text='TMR_P AI Bot', font=('bold', 30), fg='#8F43EE', bg='#2D2727').place(y=50 , x=120)
-
-
-            mat = Entry(root, font=('bold', 20), bg='#413543', fg='#F0EB8D')
-            mat.place(y=550, x=15)
-
-            enter = Button(root, text='Enter', font=('bold', 20), bg='#8F43EE', fg='#F0EB8D')
-            enter.place(y=545, x=370)
-
-            root.mainloop()
-
-        def chat_panel_en():
-            root = Tk()
-            root.title('TMR-P')
-            root.geometry('500x600')
-            root.configure(bg="#2D2727")
-
-            Banner = Label(text='TMR_P AI Bot', font=('bold', 30),fg='#8F43EE', bg='#2D2727').place(y=50, x=120)
-
-            mat = Entry(root, font=('bold', 20), bg='#413543', fg='#F0EB8D')
-            mat.place(y=550, x=15)
-
-            enter = Button(root, text='Enter', font=('bold', 20), bg='#8F43EE', fg='#F0EB8D')
-            enter.place(y=545, x=370)
-
-            root.mainloop()
-
         def settingup():
+            # Chat Farsi
+            def chat_panel_fa():
+                settingup_p.destroy()
+                root = Tk()
+                root.title('TMR-P-fa')
+                root.geometry('500x600')
+                root.configure(bg="#2D2727")
+
+                Banner = Label(text='TMR_P AI Bot', font=('bold', 30),fg='#8F43EE', bg='#2D2727').place(y=50, x=120)
+
+                mat = Entry(root, font=('bold', 20), bg='#413543', fg='#F0EB8D')
+                mat.place(y=550, x=15)
+
+                enter = Button(root, text='ارسال', font=('bold', 20), bg='#8F43EE', fg='#F0EB8D')
+                enter.place(y=545, x=370)
+
+                root.mainloop()
+
+            # Caht English
+            def chat_panel_en():
+                settingup_p.destroy()
+                root = Tk()
+                root.title('TMR-P')
+                root.geometry('500x600')
+                root.configure(bg="#2D2727")
+
+                Banner = Label(text='TMR_P AI Bot', font=('bold', 30),
+                            fg='#8F43EE', bg='#2D2727').place(y=50, x=120)
+
+                mat = Entry(root, font=('bold', 20), bg='#413543', fg='#F0EB8D')
+                mat.place(y=550, x=15)
+                enter = Button(root, text='Enter', font=(
+                    'bold', 20), bg='#8F43EE', fg='#F0EB8D')
+                enter.place(y=545, x=370)
+
+                root.mainloop()
+
+            # Panel chose lang         
             settingup_p = Tk()
             settingup_p.title('Setting Up')
             settingup_p.geometry('400x550')
@@ -85,13 +90,14 @@ class main:
             Label(settingup_p, text='language', font=('bold', 30),
                   bg='#2D2727', fg='#F0EB8D').place(x=110, y=50)
 
-            lang_fa = Button(settingup_p, text='Farsi', font=('bold', 30), bg='#2D2727', fg='#F0EB8D',command=chat_panel_fa)
-            lang_fa.place(x=250,y=150)
+            lang_fa = Button(settingup_p, text='Farsi', font=('bold', 30), bg='#2D2727', fg='#F0EB8D',)
+            lang_fa.place(x=250, y=150)
 
-            lang_en = Button(settingup_p, text='English', font=('bold', 30), bg='#2D2727', fg='#F0EB8D',command=chat_panel_en)
+            lang_en = Button(settingup_p, text='English', font=('bold', 30), bg='#2D2727', fg='#F0EB8D', command=chat_panel_en)
             lang_en.place(x=50, y=150)
 
             settingup_p.mainloop()
+
         
         settingup()
         
