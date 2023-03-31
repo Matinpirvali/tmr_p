@@ -64,37 +64,41 @@ class main:
 
             # Caht English
             def chat_panel_en():
+                hig = 30
+                
                 settingup_p.destroy()
                 root = Tk()
                 root.title('TMR-P')
                 root.geometry('500x600')
                 root.configure(bg="#2D2727")
 
-                Banner = Label(text='TMR_P AI Bot', font=('bold', 30),
-                            fg='#8F43EE', bg='#2D2727').place(y=50, x=120)
+                Label(text='TMR_P AI Bot', font=('bold', 30),fg='#8F43EE', bg='#2D2727').place(y=30, x=120)
 
                 mat = Entry(root, font=('bold', 20), bg='#413543', fg='#F0EB8D')
                 mat.place(y=550, x=15)
-                enter = Button(root, text='Enter', font=(
-                    'bold', 20), bg='#8F43EE', fg='#F0EB8D')
+
+                enter = Button(root, text='Enter', font=('bold', 20), bg='#8F43EE', fg='#F0EB8D')
                 enter.place(y=545, x=370)
+
+                Chat = Label(root, text='', font=("Helvetica", 15), bg='#2D2727', fg='#F0EB8D')
+                Chat.place(x=hig,y=400)
 
                 root.mainloop()
 
             # Panel chose lang         
             settingup_p = Tk()
             settingup_p.title('Setting Up')
-            settingup_p.geometry('400x550')
+            settingup_p.geometry('400x300')
             settingup_p.configure(bg="#2D2727")
 
             Label(settingup_p, text='language', font=('bold', 30),
                   bg='#2D2727', fg='#F0EB8D').place(x=110, y=50)
 
-            lang_fa = Button(settingup_p, text='Farsi', font=('bold', 30), bg='#2D2727', fg='#F0EB8D',)
+            lang_fa = Button(settingup_p, text='Fa', font=('bold', 30), bg='#2D2727', fg='#F0EB8D',)
             lang_fa.place(x=250, y=150)
 
-            lang_en = Button(settingup_p, text='English', font=('bold', 30), bg='#2D2727', fg='#F0EB8D', command=chat_panel_en)
-            lang_en.place(x=50, y=150)
+            lang_en = Button(settingup_p, text='En', font=('bold', 30), bg='#2D2727', fg='#F0EB8D', command=chat_panel_en)
+            lang_en.place(x=90, y=150)
 
             settingup_p.mainloop()
 
