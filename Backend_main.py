@@ -98,5 +98,4 @@ class main():
                 else:
                     print("Sorry,I dont understand")
 
-if __name__ == "__mian__":
-    main.MatRas()
+main.MatRas()
