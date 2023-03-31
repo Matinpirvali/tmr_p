@@ -64,24 +64,39 @@ class main:
 
             # Caht English
             def chat_panel_en():
-                hig = 30
                 
+                def your_req():
+                    pass
+
+                hig_bot = 450
+                hig_you = 400
+
                 settingup_p.destroy()
                 root = Tk()
+                # config UI
                 root.title('TMR-P')
                 root.geometry('500x600')
                 root.configure(bg="#2D2727")
 
                 Label(text='TMR_P AI Bot', font=('bold', 30),fg='#8F43EE', bg='#2D2727').place(y=30, x=120)
+                
+                #input
 
                 mat = Entry(root, font=('bold', 20), bg='#413543', fg='#F0EB8D')
                 mat.place(y=550, x=15)
 
-                enter = Button(root, text='Enter', font=('bold', 20), bg='#8F43EE', fg='#F0EB8D')
+                # Enter Btn
+
+                enter = Button(root, text='Enter', font=('bold', 20), bg='#8F43EE', fg='#F0EB8D', command=your_req)
                 enter.place(y=545, x=370)
 
-                Chat = Label(root, text='', font=("Helvetica", 15), bg='#2D2727', fg='#F0EB8D')
-                Chat.place(x=hig,y=400)
+                # Chat texts 
+
+                Bot_Chat = Label(root, text='bot', font=("Helvetica", 15), bg='#2D2727', fg='#F0EB8D')
+                Bot_Chat.place(x=40,y=hig_bot)
+
+                Your_Chat = Label(root, text='you', font=("Helvetica", 15), bg='#2D2727', fg='#F0EB8D')
+                Your_Chat.place(x=400, y=hig_you)
 
                 root.mainloop()
 
