@@ -7,6 +7,7 @@ try:
     from os import system
     from datetime import datetime
     from tkinter import *
+    from PIL import ImageTk, Image
 
     system('clear')
 except ModuleNotFoundError:
@@ -42,9 +43,9 @@ class main:
         log.write(furme)
         log.close()
 
-    def bot():
-        def settingup():
-            # Chat Farsi
+    def main_bot():
+        class bot:
+
             def chat_panel_fa():
                 settingup_p.destroy()
                 root = Tk()
@@ -62,27 +63,27 @@ class main:
 
                 root.mainloop()
 
-            # Caht English
+
             def chat_panel_en():
-                
                 def your_req():
-                    pass
+                    Question = mat.get()
+                    print('Question: ', Question)
+                    Your_Chat.config(text=Question)
 
                 hig_bot = 450
                 hig_you = 400
 
-                settingup_p.destroy()
                 root = Tk()
                 # config UI
                 root.title('TMR-P')
                 root.geometry('500x600')
                 root.configure(bg="#2D2727")
 
-                Label(text='TMR_P AI Bot', font=('bold', 30),fg='#8F43EE', bg='#2D2727').place(y=30, x=120)
-                
-                #input
+                Label(text='TMR_P AI Bot', font=('bold', 30), fg='#8F43EE', bg='#2D2727').place(y=30, x=120)
 
-                mat = Entry(root, font=('bold', 20), bg='#413543', fg='#F0EB8D')
+                # input
+
+                mat = Entry(root, font=('bold', 20),bg='#413543', fg='#F0EB8D')
                 mat.place(y=550, x=15)
 
                 # Enter Btn
@@ -90,36 +91,56 @@ class main:
                 enter = Button(root, text='Enter', font=('bold', 20), bg='#8F43EE', fg='#F0EB8D', command=your_req)
                 enter.place(y=545, x=370)
 
-                # Chat texts 
+                # Chat texts
 
                 Bot_Chat = Label(root, text='bot', font=("Helvetica", 15), bg='#2D2727', fg='#F0EB8D')
-                Bot_Chat.place(x=40,y=hig_bot)
+                Bot_Chat.place(x=40, y=hig_bot)
 
                 Your_Chat = Label(root, text='you', font=("Helvetica", 15), bg='#2D2727', fg='#F0EB8D')
                 Your_Chat.place(x=400, y=hig_you)
 
+                info_btn = Button(root, text='Info')
+                info_btn.place(x=15,y=20)
+
+                #info icon
+                frame = Frame(root, width=600, height=400)
+                frame.pack()
+                frame.place(anchor='center', relx=0.5, rely=0.5)
+
+                # Create an object of tkinter ImageTk
+                img = ImageTk.PhotoImage(Image.open("assets/img/info.png"))
+
+                # Create a Label Widget to display the text or Image
+                label = Label(frame, image=img)
+                label.pack()
+
                 root.mainloop()
 
-            # Panel chose lang         
-            settingup_p = Tk()
-            settingup_p.title('Setting Up')
-            settingup_p.geometry('400x300')
-            settingup_p.configure(bg="#2D2727")
+            def settingup():
+                # Chat Farsi
 
-            Label(settingup_p, text='language', font=('bold', 30),
-                  bg='#2D2727', fg='#F0EB8D').place(x=110, y=50)
+                # # Panel chose lang
+                # settingup_p = Tk()
+                # settingup_p.title('Setting Up')
+                # settingup_p.geometry('400x300')
+                # settingup_p.configure(bg="#2D2727")
 
-            lang_fa = Button(settingup_p, text='Fa', font=('bold', 30), bg='#2D2727', fg='#F0EB8D',)
-            lang_fa.place(x=250, y=150)
+                # Label(settingup_p, text='language', font=('bold', 30),
+                #       bg='#2D2727', fg='#F0EB8D').place(x=110, y=50)
 
-            lang_en = Button(settingup_p, text='En', font=('bold', 30), bg='#2D2727', fg='#F0EB8D', command=chat_panel_en)
-            lang_en.place(x=90, y=150)
+                # lang_fa = Button(settingup_p, text='Fa', font=('bold', 30), bg='#2D2727', fg='#F0EB8D',)
+                # lang_fa.place(x=250, y=150)
 
-            settingup_p.mainloop()
+                # lang_en = Button(settingup_p, text='En', font=('bold', 30), bg='#2D2727', fg='#F0EB8D', command=chat_panel_en)
+                # lang_en.place(x=90, y=150)
 
-        
-        settingup()
+                # settingup_p.mainloop()
+                pass
+
+        if __name__ == "__main__":
+            bot.settingup()
+            bot.chat_panel_en()
         
 
 if __name__ == "__main__":
-    main.bot()
+    main.main_bot()
