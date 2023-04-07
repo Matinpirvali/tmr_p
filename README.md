@@ -26,7 +26,7 @@ run GUI app
 
 `$ cd GUI`
 
-`$ python3 app.py`
+`$ python3 main.py`
 
 # 📦 Requirements
 
