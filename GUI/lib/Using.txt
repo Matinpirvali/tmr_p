@@ -1,0 +1,9 @@
+# Copyright(c) 2023 Dadmehr0
+#
+# using 
+#
+# import Library
+# from lib import sound_ef
+#
+# Select Effect Mode = Ok | Alert
+# sound_ef.Effect(mode='alert')

@@ -8,6 +8,7 @@ try:
     from datetime import datetime
     from tkinter import *
     
+    from lib import sound_ef
     system('clear')
 except ModuleNotFoundError:
     print('Script need Python3\nPelease install requirements : \nwith "pip install -r requirements.txt\n"')
