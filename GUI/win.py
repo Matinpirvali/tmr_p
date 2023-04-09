@@ -1,12 +1,11 @@
 try:
     import platform
-    import subprocess
     import requests
     import time
 
     from os import system
     from datetime import datetime
-    from tkinter import *
+    from Tkinter import *
 
     from lib import sound_ef
 except:
