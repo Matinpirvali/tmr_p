@@ -38,8 +38,7 @@ class main:
             platform_log = str(platform.platform())
             path = 'data//log.json'
 
-            furme = '{\n    "time": "'+time_log+'",\n    "system": "' + \
-                platform_log+'",\n    "IP": "'+ip+'",\n    "status": "'+status+'"\n}\n'
+            furme = '{\n    "time": "'+time_log+'",\n    "system": "' + platform_log+'",\n    "IP": "'+ip+'",\n    "status": "'+status+'"\n}\n'
 
             # Save log
             log = open(path, 'w')
