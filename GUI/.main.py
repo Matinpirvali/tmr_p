@@ -1,9 +1,12 @@
 try:
     import platform
     import os
+    from lib import sound_ef
 except:
     print('Script need Python3\nPelease install requirements : with "pip install -r requirements.txt\n"')
 name_OS = platform.system()
+
+sound_ef.Effect(mode='ok')
 
 def install_update():
     global name_OS
