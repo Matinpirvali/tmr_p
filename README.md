@@ -2,7 +2,7 @@
 
 یک هوش مصنوعی با هدف کمک به انسان ها و دانش اموز ها
 ما سعی کردیم که برنامه را به صورت افلاین و انلاین توسعه دهیم که به راحتی بتوان از ان استفاده کرد 
-این برنامه از محتوا های اماده برای دادن اظلاعات به دیگران استفاده می شود
+این برنامه از محتوا های اماده برای دادن اطلاعات به دیگران استفاده می شود
 
 An artificial intelligence aimed at helping humans and students
 We tried to develop the program offline and online which can be easily used
