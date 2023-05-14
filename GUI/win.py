@@ -6,6 +6,7 @@ try:
     
     from datetime import datetime
     from tkinter import *
+    from customtkinter import *
     from lib import sound_ef
 except:
     print('Script need Python3\nPelease install requirements : with "pip install -r requirements.txt\n"')
@@ -65,7 +66,7 @@ class main:
         root.after(200, task)
         root.mainloop()
 
-    def main_bot():
+    def main_bot(): 
         class bot:
             def chat_panel():
                 hig_bot = 450
