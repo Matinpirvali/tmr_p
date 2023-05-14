@@ -66,7 +66,7 @@ class main:
         root.after(200, task)
         root.mainloop()
 
-    def main_bot(): 
+    def main_bot(): # Plan Change and use ctk 
         class bot:
             def chat_panel():
                 hig_bot = 450
