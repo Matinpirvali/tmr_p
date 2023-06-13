@@ -109,6 +109,5 @@ class main:
 
 
 if __name__ == "__main__":
-    main.install_update()
     main.log()
     main.main_bot()
