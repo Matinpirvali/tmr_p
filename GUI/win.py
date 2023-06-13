@@ -13,14 +13,6 @@ except:
 
 
 class main:
-    def install_update():
-        try:
-            os.system('pip install datetime')
-            os.system('pip install requests')
-            os.system('pip install playsound')
-        except:
-            print('install Fail')
-
 
     def log():
         def task():
