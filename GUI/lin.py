@@ -13,18 +13,6 @@ except:
 
 
 class main:
-    def install_update():
-        try:
-            os.system('pip install datetime')
-            os.system('pip install requests')
-            os.system('pip install playsound')
-
-            os.system('clear')
-        except:
-            print('install Fail')
-
-        else:
-            print('App not suport your system')
     def log():
         def task():
             # The window will stay open until this function call ends.
