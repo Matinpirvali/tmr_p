@@ -77,26 +77,21 @@ class main:
                 root.geometry('500x600')
                 root.configure(bg="#2D2727")
 
-                Label(text='TMR_P AI Bot', font=('bold', 30),
-                    fg='#8F43EE', bg='#2D2727').place(y=30, x=120)
+                Label(text='TMR_P AI Bot', font=('bold', 30),fg='#8F43EE', bg='#2D2727').place(y=30, x=120)
 
                 # input
-                mat = Entry(root, font=('bold', 20),
-                            bg='#413543', fg='#F0EB8D')
+                mat = Entry(root, font=('bold', 20),bg='#413543', fg='#F0EB8D')
                 mat.place(y=550, x=15)
 
                 # Enter Btn
-                enter = Button(root, text='Enter', font=(
-                    'bold', 20), bg='#8F43EE', fg='#F0EB8D', command=your_req)
+                enter = Button(root, text='Enter', font=('bold', 20), bg='#8F43EE', fg='#F0EB8D', command=your_req)
                 enter.place(y=545, x=370)
 
                 # Chat texts
-                Bot_Chat = Label(root, text='bot', font=(
-                    "Helvetica", 15), bg='#2D2727', fg='#F0EB8D')
+                Bot_Chat = Label(root, text='bot', font=("Helvetica", 15), bg='#2D2727', fg='#F0EB8D')
                 Bot_Chat.place(x=40, y=hig_bot)
 
-                Your_Chat = Label(root, text='you', font=(
-                    "Helvetica", 15), bg='#2D2727', fg='#F0EB8D')
+                Your_Chat = Label(root, text='you', font=("Helvetica", 15), bg='#2D2727', fg='#F0EB8D')
                 Your_Chat.place(x=400, y=hig_you)
 
                 info_btn = Button(root, text='Info')
