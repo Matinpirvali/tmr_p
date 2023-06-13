@@ -1,0 +1,11 @@
+
+# add image to app
+
+from PIL import Image
+
+my_image = customtkinter.CTkImage(light_image=Image.open("<path to light mode image>"),
+                                  dark_image=Image.open("<path to dark mode image>"),
+                                  size=(30, 30))
+
+button = customtkinter.CTkButton(app, image=my_image)
+

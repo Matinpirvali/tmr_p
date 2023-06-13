@@ -1,11 +1,13 @@
 # BDadmehr0 - Garfox
 try:
+    
     import platform
     import subprocess
     import requests
     import time
     import os
 
+    from tkinter import ttk
     from tkinter import *
     from customtkinter import *
     from datetime import datetime
@@ -13,11 +15,25 @@ try:
 except ModuleNotFoundError:
    print('Script need Python3\nPelease install requirements : with "pip install -r requirements.txt\n"')
 
+# APP Theme
+set_default_color_theme("dark-blue")
+
+
+def main_bot():
+
+    home = CTk()
+    home.title('TMR_P')
+    home.geometry()
+    home.mainloop()
 
 def log():
-    def task():
+    def simulate_loading():
+        progress_bar.start(10)  # Start the progress bar animation
+        # Simulate a loading process
+        # You can replace this with your actual loading logic
+        # Here, we're using a simple time delay to simulate the loading process
         # The window will stay open until this function call ends.
-        time.sleep(2)
+
         # check network connection
         url = 'http://www.google.com/'
         timeout = 5
@@ -37,7 +53,7 @@ def log():
         # Time & platform
         time_log = str(datetime.now())
         platform_log = str(platform.platform())
-        path = 'data/log.json'
+        path = 'log/log.json'
 
         furme = '{\n    "time": "'+time_log+'",\n    "system": "' + platform_log+'",\n    "IP": "'+ip+'",\n    "status": "'+status+'"\n}\n'
 
@@ -46,25 +62,33 @@ def log():
         log.write(furme)
         log.close()
         root.destroy()
+        root.after(3000, finish_loading)
 
-    # Load page tk
-    root = Tk()
-    root.title("Loading")
-    root.resizable()
-
-    label = Label(root, text="Waiting for task to finish.")
-    label.pack()
-
-    root.after(200, task)
-    root.mainloop()
-
-def main_bot():
+    def finish_loading():
+        progress_bar.stop()  # Stop the progress bar animation
+        root.destroy()  # Close the loading menu and proceed to the main application
 
     root = CTk()
-    root.title('TMR_P')
-    root.geometry()
+    root.title("Loading Menu")
+    root.geometry("300x100")
+
+    # Create a frame
+    frame = CTkFrame(root)
+    frame.pack(pady=20)
+
+    # Create a progress bar
+    progress_bar = ttk.Progressbar(frame, orient="horizontal", mode="indeterminate")
+    progress_bar.pack(pady=10)
+
+    # Create a button to start the loading process
+    start_button = CTkButton(frame, text="Start", command=simulate_loading)
+    start_button.pack()
+
     root.mainloop()
+
+
 
 if __name__ == "__main__":
     log()
+    time.sleep(2)
     main_bot()
