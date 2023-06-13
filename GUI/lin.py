@@ -1,16 +1,16 @@
-# try:
-import platform
-import subprocess
-import requests
-import time
-import os
-    
-from tkaa import s
-from tkinter import *
-from datetime import datetime
-from lib import sound_ef
-# except:
-#    print('Script need Python3\nPelease install requirements : with "pip install -r requirements.txt\n"')
+try:
+    import platform
+    import subprocess
+    import requests
+    import time
+    import os
+        
+    from tkaa import s
+    from tkinter import *
+    from datetime import datetime
+    # from lib import sound_ef
+except ModuleNotFoundError:
+   print('Script need Python3\nPelease install requirements : with "pip install -r requirements.txt\n"')
 
 
 class main:
