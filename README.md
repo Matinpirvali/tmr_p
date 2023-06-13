@@ -8,33 +8,26 @@ An artificial intelligence aimed at helping humans and students
 We tried to develop the program offline and online which can be easily used
 This program uses ready-made content to give information to others
 
-# 📥 Install App & requirements
+# 📥 Installion
 
-`$ git clone https://github.com/Matinpirvali/tmr_p.git`
-
-`$ cd tmr_p`
-
-`$ pip install -r requirements.txt`
+```bash
+$ git clone https://github.com/Matinpirvali/tmr_p.git
+$ cd Matinpirvali
+$ chmod +x ./install.sh
+$ sudo ./install.sh
+```
 
 # ▶️ Run 
 
 run Backend app (Unix-Terminal)
 
-`$ python3 Backend_main.py`
+```bash
+$ python3 main.py
+```
 
 run GUI app
 
-`$ cd GUI`
-
-`$ python3 main.py`
-
-# 📦 Requirements
-
-Python 3
-
-Tk / Tcl
-
-datetime
-
-requests
-
+```bash
+$ cd GUI
+$ python3 main.py
+```

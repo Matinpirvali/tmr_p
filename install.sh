@@ -1,4 +1,4 @@
 sudo apt install -y python3
-pip install -r ./GUI/lib/requirements.txt
+pip install -r ./GUI/assets/requirements.txt
 clear
 echo 'Install Done'
