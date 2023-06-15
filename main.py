@@ -81,7 +81,7 @@ class main():
                                     elif "Student"in input7 or "student"in input7:
                                         one=963
                                 elif "8" in input6 or "هشت" in input6 or "هشتم" in input6 or "eight" in input6:
-                                    input7=ipuut("Nader or Iman")
+                                    input7=input("Nader or Iman")
                                     if "Teacher" in input7 or "teacher" in input7:
                                         one=3
                                     elif "Student" in input7 or "student" in input7:
@@ -287,7 +287,7 @@ class main():
                         print("Let`s meet your Englis teacher first.")
                     elif Six==963:
                         one1=input("")
-                        if "Mom,where are you?"!=One1 and "Mom where are you?" !=One1:
+                        if "Mom,where are you?"!=one1 and "Mom where are you?" !=one1:
                             print("لطف کن دقت کن")
                             print("Mom,where are you?")
                         print("I`m in the kitchen")
@@ -297,7 +297,7 @@ class main():
                             print("Hello.Where`s Dad?")
                         print(" In the garage")
                         Three=input("")
-                        if "What`s he doing?I`m so hungry"!=three3:
+                        if "What`s he doing?I`m so hungry"!=Three:
                             print("دقت کنید ")
                             print("What`s he doing?I`m so hungry.")
                         print("Ok,wash your hands and com fr lunch")
