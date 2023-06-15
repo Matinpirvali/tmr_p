@@ -24,22 +24,35 @@ def main_bot():
         def button_send_task():
             pass
         
-        if n == 1:
+        if 1 == 1:
             button_send_main()
 
     home = CTk()
     home.title('TMR_P')
     home.geometry('600x600')
+    home.resizable(width=False, height=False)
     
     # BOT Aseets
     frame_bot = CTkFrame(home)
-    frame_bot.pack(padx=10,pady=12)
+    frame_bot.pack(padx=10,pady=12, fill=X)
 
-    bot_tit_lb = CTkLabel(frame_bot, text='Bot', font=('Roboto', 25), width=600, height=100)
-    bot_tit_lb.pack(side=RIGHT)
+    bot_tit_lb = CTkLabel(frame_bot, text='Bot', font=('Roboto', 25))
+    bot_tit_lb.pack(padx=12,pady=12,side=TOP)
 
-    bot_lb = CTkLabel(frame_bot, text='')
-    bot_lb.pack()
+    bot_lb = CTkLabel(frame_bot, text='سلام', font=('Roboto', 20))
+    bot_lb.pack(padx=12,pady=12,side=LEFT)
+
+    # User
+    frame_user = CTkFrame(home)
+    frame_user.pack(padx=10,pady=12, fill=X, side=BOTTOM)
+
+    qust_user_ent = CTkEntry(frame_user, width=500, font=('Bold', 15),)
+    qust_user_ent.pack(side=LEFT)
+    
+    send_btn = CTkButton(frame_user, text='ارسال')
+    send_btn.pack(side=LEFT)
+
+
 
     home.mainloop()
 
