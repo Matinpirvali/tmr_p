@@ -14,7 +14,7 @@ class main():
             else:
                 print("sorry,I dont understand")
 
-        if Mat =="English" or Mat=="english":
+        if Mat == "English" or Mat=="english":
             print("Hi")
 
             while 1==1:

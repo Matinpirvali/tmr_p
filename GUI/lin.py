@@ -1,6 +1,5 @@
 # BDadmehr0 - Garfox
 try:
-    
     import platform
     import subprocess
     import requests
@@ -13,7 +12,7 @@ try:
     from datetime import datetime
     # from lib import sound_ef
 except ModuleNotFoundError:
-   print('Script need Python3\nPelease install requirements : with "pip install -r requirements.txt\n"')
+   print('App need Python3\nPelease install requirements : with "pip install -r GUI/lib/requirements.txt"\n')
 
 # APP Theme
 set_default_color_theme("dark-blue")
@@ -23,12 +22,19 @@ def main_bot():
 
     home = CTk()
     home.title('TMR_P')
-    home.geometry()
+    home.geometry('800x900')
+    
+    # BOT Aseets
+    frame_bot = CTkFrame(home)
+    frame_bot.pack(padx=10,pady=12, side=LEFT)
+
+    bot_lb = CTkLabel(frame_bot)
+    bot_lb
     home.mainloop()
 
 def log():
     def simulate_loading():
-        progress_bar.start(10)  # Start the progress bar animation
+        progress_bar.start(10) # Start the progress bar animation
         # Simulate a loading process
         # You can replace this with your actual loading logic
         # Here, we're using a simple time delay to simulate the loading process
