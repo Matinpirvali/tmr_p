@@ -19,17 +19,28 @@ set_default_color_theme("dark-blue")
 
 
 def main_bot():
+    def button_send_main():
+
+        def button_send_task():
+            pass
+        
+        if n == 1:
+            button_send_main()
 
     home = CTk()
     home.title('TMR_P')
-    home.geometry('800x900')
+    home.geometry('600x600')
     
     # BOT Aseets
     frame_bot = CTkFrame(home)
-    frame_bot.pack(padx=10,pady=12, side=LEFT)
+    frame_bot.pack(padx=10,pady=12)
 
-    bot_lb = CTkLabel(frame_bot)
-    bot_lb
+    bot_tit_lb = CTkLabel(frame_bot, text='Bot', font=('Roboto', 25), width=600, height=100)
+    bot_tit_lb.pack(side=RIGHT)
+
+    bot_lb = CTkLabel(frame_bot, text='')
+    bot_lb.pack()
+
     home.mainloop()
 
 def log():
@@ -79,7 +90,7 @@ def log():
     root.geometry("300x100")
 
     # Create a frame
-    frame = CTkFrame(root)
+    frame = ttk.CTkFrame(root)
     frame.pack(pady=20)
 
     # Create a progress bar
@@ -87,7 +98,7 @@ def log():
     progress_bar.pack(pady=10)
 
     # Create a button to start the loading process
-    start_button = CTkButton(frame, text="Start", command=simulate_loading)
+    start_button = ttk.Button(frame, text="Start", command=simulate_loading)
     start_button.pack()
 
     root.mainloop()
@@ -95,6 +106,4 @@ def log():
 
 
 if __name__ == "__main__":
-    log()
-    time.sleep(2)
     main_bot()
