@@ -19,6 +19,8 @@ set_default_color_theme("dark-blue")
 
 
 def main_bot():
+    def about():
+        pass
     def button_send_main():
 
         def button_send_task():
