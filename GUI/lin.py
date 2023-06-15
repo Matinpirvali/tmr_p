@@ -31,25 +31,31 @@ def main_bot():
     home.title('TMR_P')
     home.geometry('600x600')
     home.resizable(width=False, height=False)
+
+
     
     # BOT Aseets
     frame_bot = CTkFrame(home)
     frame_bot.pack(padx=10,pady=12, fill=X)
 
-    bot_tit_lb = CTkLabel(frame_bot, text='Bot', font=('Roboto', 25))
+    bot_tit_lb = CTkLabel(frame_bot, text='Bot', font=('Roboto', 25), corner_radius=0)
     bot_tit_lb.pack(padx=12,pady=12,side=TOP)
 
-    bot_lb = CTkLabel(frame_bot, text='سلام', font=('Roboto', 20))
+    bot_lb = CTkLabel(frame_bot, text='سلام', font=('Roboto', 20), corner_radius=0)
     bot_lb.pack(padx=12,pady=12,side=LEFT)
+
+    # Other
+    About_btn = CTkButton(frame_bot, text='About', corner_radius=0)
+    About_btn.pack(side=RIGHT)
 
     # User
     frame_user = CTkFrame(home)
     frame_user.pack(padx=10,pady=12, fill=X, side=BOTTOM)
 
-    qust_user_ent = CTkEntry(frame_user, width=500, font=('Bold', 15),)
+    qust_user_ent = CTkEntry(frame_user, width=500, font=('Bold', 25), corner_radius=0)
     qust_user_ent.pack(side=LEFT)
     
-    send_btn = CTkButton(frame_user, text='ارسال')
+    send_btn = CTkButton(frame_user, text='✔️', font=('bold', 25), corner_radius=0, command=button_send_main)
     send_btn.pack(side=LEFT)
 
 
