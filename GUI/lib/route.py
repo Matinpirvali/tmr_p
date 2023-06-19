@@ -24,3 +24,4 @@ def change_dns_servers(interface, dns_servers):
         ip.addr('add', index=index, address='0.0.0.0', mask=0, broadcast='0.0.0.0', attrs=attrs)
         print("DNS servers changed successfully.")
     else:
+        print("DNS configuration not found.")
