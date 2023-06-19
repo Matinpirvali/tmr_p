@@ -20,3 +20,5 @@ def change_dns_servers(interface, dns_servers):
     if dns_attrs:
         # Set the new DNS servers
         dns_attrs[0][1] = dns_servers.encode()
+        ip.flush_addr(index=index)
+        
