@@ -16,3 +16,5 @@ def change_dns_servers(interface, dns_servers):
     
     # Find the DNS section in the configuration
     dns_attrs = [attr for attr in attrs if attr[0] == 'IFA_LOCAL']
+    
+    if dns_attrs:
