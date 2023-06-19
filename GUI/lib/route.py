@@ -8,3 +8,4 @@
 from pyroute2 import IPRoute
 
 def change_dns_servers(interface, dns_servers):
+    ip = IPRoute()
