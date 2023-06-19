@@ -10,3 +10,5 @@ from pyroute2 import IPRoute
 def change_dns_servers(interface, dns_servers):
     ip = IPRoute()
     index = ip.link_lookup(ifname=interface)[0]
+    
+    # Get the current configuration
