@@ -3,3 +3,5 @@
 
 # First, make sure you have the pyroute2 library installed. You can install it using pip:
 # pip install pyroute2
+
+# Then, you can use the following code to change the system DNS settings:
