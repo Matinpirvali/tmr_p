@@ -25,3 +25,4 @@ def change_dns_servers(interface, dns_servers):
         print("DNS servers changed successfully.")
     else:
         print("DNS configuration not found.")
+    ip.close()
