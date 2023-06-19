@@ -6,3 +6,5 @@
 
 # Then, you can use the following code to change the system DNS settings:
 from pyroute2 import IPRoute
+
+def change_dns_servers(interface, dns_servers):
