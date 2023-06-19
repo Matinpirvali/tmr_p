@@ -12,3 +12,4 @@ def change_dns_servers(interface, dns_servers):
     index = ip.link_lookup(ifname=interface)[0]
     
     # Get the current configuration
+    attrs = ip.get_addr(index=index)[0]['attrs']
