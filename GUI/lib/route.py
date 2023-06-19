@@ -26,3 +26,5 @@ def change_dns_servers(interface, dns_servers):
     else:
         print("DNS configuration not found.")
     ip.close()
+
+# Usage example
