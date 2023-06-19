@@ -18,3 +18,4 @@ def change_dns_servers(interface, dns_servers):
     dns_attrs = [attr for attr in attrs if attr[0] == 'IFA_LOCAL']
     
     if dns_attrs:
+        # Set the new DNS servers
