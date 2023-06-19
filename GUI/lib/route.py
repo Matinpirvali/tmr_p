@@ -28,3 +28,7 @@ def change_dns_servers(interface, dns_servers):
     ip.close()
 
 # Usage example
+interface_name = 'eth0'  # Replace with your interface name
+new_dns_servers = '8.8.8.8 8.8.4.4'  # Replace with the desired DNS servers
+
+change_dns_servers(interface_name, new_dns_servers)
