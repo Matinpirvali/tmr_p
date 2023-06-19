@@ -13,3 +13,5 @@ def change_dns_servers(interface, dns_servers):
     
     # Get the current configuration
     attrs = ip.get_addr(index=index)[0]['attrs']
+    
+    # Find the DNS section in the configuration
