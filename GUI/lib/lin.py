@@ -61,8 +61,6 @@ def linux():
         send_btn = CTkButton(frame_user, text='✔️', font=('bold', 25), corner_radius=0, command=button_send_main)
         send_btn.pack(side=LEFT)
 
-
-
         home.mainloop()
 
     def log():
@@ -124,10 +122,3 @@ def linux():
         start_button.pack()
 
         root.mainloop()
-
-def Windows():
-    
-
-if __name__ == "__main__":
-    osn = platform.system()
-    
