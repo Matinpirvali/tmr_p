@@ -15,7 +15,7 @@ except ModuleNotFoundError:
    print('App need Python3\nPelease install requirements : with "pip install -r GUI/lib/requirements.txt"\n')
 
 
-def run():
+def run_w():
     # APP Theme
     set_default_color_theme("dark-blue")
 

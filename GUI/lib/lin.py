@@ -11,7 +11,7 @@ try:
 except ModuleNotFoundError:
     print('App need Python3\nPelease install requirements : with "pip install -r GUI/lib/requirements.txt"\n')
 
-def run():
+def run_l():
 
     # APP Theme
     set_default_color_theme("dark-blue")
@@ -45,8 +45,7 @@ def run():
         bot_lb.pack(padx=12,pady=12,side=LEFT)
 
         # Other
-        About_btn = CTkButton(frame_bot, text='About', corner_radius=0)
-        About_btn.pack(side=RIGHT)
+        # About utton not avaible in DEMO 
 
         # User
         frame_user = CTkFrame(home)
@@ -102,12 +101,12 @@ def run():
             progress_bar.stop()  # Stop the progress bar animation
             root.destroy()  # Close the loading menu and proceed to the main application
 
-        root = CTk()
+        root = Tk()
         root.title("Loading Menu")
         root.geometry("300x100")
 
         # Create a frame
-        frame = ttk.CTkFrame(root)
+        frame = ttk.Frame(root)
         frame.pack(pady=20)
 
         # Create a progress bar
@@ -122,5 +121,3 @@ def run():
 
     log()
     main_bot()
-
-run()
