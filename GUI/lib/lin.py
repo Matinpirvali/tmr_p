@@ -1,10 +1,7 @@
 # BDadmehr0 - Garfox
 try:
     import platform
-    import subprocess
     import requests
-    import time
-    import os
 
     from tkinter import ttk
     from tkinter import *
@@ -12,10 +9,10 @@ try:
     from datetime import datetime
     # from lib import sound_ef
 except ModuleNotFoundError:
-   print('App need Python3\nPelease install requirements : with "pip install -r GUI/lib/requirements.txt"\n')
+    print('App need Python3\nPelease install requirements : with "pip install -r GUI/lib/requirements.txt"\n')
 
+def run():
 
-def linux():
     # APP Theme
     set_default_color_theme("dark-blue")
 
@@ -122,3 +119,8 @@ def linux():
         start_button.pack()
 
         root.mainloop()
+
+    log()
+    main_bot()
+
+run()
