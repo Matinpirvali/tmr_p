@@ -12,7 +12,7 @@ This program uses ready-made content to give information to others
 
 ```bash
 $ git clone https://github.com/Matinpirvali/tmr_p.git
-$ cd Matinpirvali
+$ cd tmr_p
 $ chmod +x ./install.sh
 $ sudo ./install.sh
 ```
@@ -31,3 +31,4 @@ run GUI app
 $ cd GUI
 $ python3 main.py
 ```
+# 📥 Requirements
