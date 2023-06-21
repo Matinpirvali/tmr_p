@@ -3,7 +3,7 @@ from lib.lin import run_l
 from lib.win import run_w
 from os import system
 
-def installion()
+def installion():
     try:
         system('pip3 install datetime')
         system('pip3 install requests')
