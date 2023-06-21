@@ -103,12 +103,12 @@ def run_w():
             progress_bar.stop()  # Stop the progress bar animation
             root.destroy()  # Close the loading menu and proceed to the main application
 
-        root = CTk()
+        root = Tk()
         root.title("Loading Menu")
         root.geometry("300x100")
 
         # Create a frame
-        frame = ttk.CTkFrame(root)
+        frame = ttk.Frame(root)
         frame.pack(pady=20)
 
         # Create a progress bar
