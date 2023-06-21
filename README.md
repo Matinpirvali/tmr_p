@@ -33,10 +33,9 @@ $ python3 main.py
 ```
 # 📥 Requirements
 
+```bash
 datetime==5.1
-
 requests==2.22.0
-
 playsound==1.3.0
-
 customtkinter==5.1.3
+```
