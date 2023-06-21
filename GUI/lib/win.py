@@ -120,3 +120,5 @@ def run_w():
         start_button.pack()
 
         root.mainloop()
+    log()
+    main_bot()
