@@ -1,4 +1,16 @@
+from os import system
+def installion():
+    print(1)
+    try:
+        system('pip3 install datetime')
+        system('pip3 install requests')
+        system('pip3 install playsound')
+        system('pip3 install customtkinter')
+    except:
+        print('install fail')
+installion()
 # BDadmehr0 - Garfox
+print(1)
 try:
     import platform
     import subprocess
@@ -11,23 +23,23 @@ try:
     from datetime import datetime
     # from lib import sound_ef
     from lib.lin import run_l
-    from os import system
+
 except ModuleNotFoundError:
-   print('App need Python3\nPelease install requirements : with "pip install -r GUI/lib/requirements.txt"\n')
+    print('App need Python3\nPelease install requirements : with "pip install -r GUI/lib/requirements.txt"\n')
 
 
 def run_w():
     # APP Theme
-#    set_default_color_theme("dark-blue")
+    #    set_default_color_theme("dark-blue")
 
     def main_bot():
         def about():
             pass
-        def button_send_main():
 
+        def button_send_main():
             def button_send_task():
                 pass
-            
+
             if 1 == 1:
                 button_send_main()
 
@@ -35,16 +47,16 @@ def run_w():
         home.title('TMR_P')
         home.geometry('600x600')
         home.resizable(width=False, height=False)
-        
+
         # BOT Aseets
         frame_bot = CTkFrame(home)
-        frame_bot.pack(padx=10,pady=12, fill=X)
+        frame_bot.pack(padx=10, pady=12, fill=X)
 
         bot_tit_lb = CTkLabel(frame_bot, text='Bot', font=('Roboto', 25), corner_radius=0)
-        bot_tit_lb.pack(padx=12,pady=12,side=TOP)
+        bot_tit_lb.pack(padx=12, pady=12, side=TOP)
 
         bot_lb = CTkLabel(frame_bot, text='سلام', font=('Roboto', 20), corner_radius=0)
-        bot_lb.pack(padx=12,pady=12,side=LEFT)
+        bot_lb.pack(padx=12, pady=12, side=LEFT)
 
         # Other
         About_btn = CTkButton(frame_bot, text='About', corner_radius=0)
@@ -52,11 +64,11 @@ def run_w():
 
         # User
         frame_user = CTkFrame(home)
-        frame_user.pack(padx=10,pady=12, fill=X, side=BOTTOM)
+        frame_user.pack(padx=10, pady=12, fill=X, side=BOTTOM)
 
         qust_user_ent = CTkEntry(frame_user, width=500, font=('Bold', 25), corner_radius=0)
         qust_user_ent.pack(side=LEFT)
-        
+
         send_btn = CTkButton(frame_user, text='✔️', font=('bold', 25), corner_radius=0, command=button_send_main)
         send_btn.pack(side=LEFT)
 
@@ -64,7 +76,7 @@ def run_w():
 
     def log():
         def simulate_loading():
-            progress_bar.start(10) # Start the progress bar animation
+            progress_bar.start(10)  # Start the progress bar animation
             # Simulate a loading process
             # You can replace this with your actual loading logic
             # Here, we're using a simple time delay to simulate the loading process
@@ -91,7 +103,7 @@ def run_w():
             platform_log = str(platform.platform())
             path = 'log//log.json'
 
-            furme = '{\n    "time": "'+time_log+'",\n    "system": "' + platform_log+'",\n    "IP": "'+ip+'",\n    "status": "'+status+'"\n}\n'
+            furme = '{\n    "time": "' + time_log + '",\n    "system": "' + platform_log + '",\n    "IP": "' + ip + '",\n    "status": "' + status + '"\n}\n'
 
             # Save log
             log = open(path, 'w')
@@ -121,18 +133,9 @@ def run_w():
         start_button.pack()
 
         root.mainloop()
+
     log()
     main_bot()
-
-
-def installion():
-    try:
-        system('pip3 install datetime')
-        system('pip3 install requests')
-        system('pip3 install playsound')
-        system('pip3 install customtkinter')
-    except:
-        print('install fail')
 
 if __name__ == "__main__":
     # System Guard
