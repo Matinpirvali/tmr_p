@@ -13,6 +13,7 @@ try:
 
     # from lib import sound_ef
     from lib.lin import run_l
+    from lib.pages import loading_page
 except ModuleNotFoundError:
     print('App need Python3\nPelease install requirements : with "pip install -r GUI/lib/requirements.txt"\n')
 
