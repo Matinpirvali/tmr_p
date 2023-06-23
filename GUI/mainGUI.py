@@ -1,16 +1,4 @@
-from os import system
-def installion():
-    print(1)
-    try:
-        system('pip3 install datetime')
-        system('pip3 install requests')
-        system('pip3 install playsound')
-        system('pip3 install customtkinter')
-    except:
-        print('install fail')
-installion()
 # BDadmehr0 - Garfox
-print(1)
 try:
     import platform
     import subprocess
@@ -27,7 +15,16 @@ try:
     from lib.lin import run_l
 except ModuleNotFoundError:
     print('App need Python3\nPelease install requirements : with "pip install -r GUI/lib/requirements.txt"\n')
-#
+
+
+def installion():
+    try:
+        system('pip3 install datetime')
+        system('pip3 install requests')
+        system('pip3 install playsound')
+        system('pip3 install customtkinter')
+    except:
+        print('install fail')
 
 def run_w():
     # APP Theme
@@ -140,6 +137,7 @@ def run_w():
 
 if __name__ == "__main__":
     # System Guard
+    installion()
     osn = platform.system()
     if osn == 'Linux':
         print(f'System Guard Verifred os: {osn}')
