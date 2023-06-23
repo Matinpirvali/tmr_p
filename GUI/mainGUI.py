@@ -25,14 +25,9 @@ try:
 
     # from lib import sound_ef
     from lib.lin import run_l
-<<<<<<< Updated upstream
-
-=======
-    from lib.pages import loading_page
->>>>>>> Stashed changes
 except ModuleNotFoundError:
     print('App need Python3\nPelease install requirements : with "pip install -r GUI/lib/requirements.txt"\n')
-
+#
 
 def run_w():
     # APP Theme
@@ -82,15 +77,12 @@ def run_w():
 
     def log():
         def simulate_loading():
-<<<<<<< Updated upstream
             progress_bar.start(10)  # Start the progress bar animation
             # Simulate a loading process
             # You can replace this with your actual loading logic
             # Here, we're using a simple time delay to simulate the loading process
             # The window will stay open until this function call ends.
 
-=======
->>>>>>> Stashed changes
             # check network connection
             url = 'http://www.google.com/'
             timeout = 5
@@ -118,7 +110,6 @@ def run_w():
             log = open(path, 'w')
             log.write(furme)
             log.close()
-<<<<<<< Updated upstream
             root.destroy()
             root.after(3000, finish_loading)
 
@@ -146,10 +137,6 @@ def run_w():
 
     log()
     main_bot()
-=======
-    
-    
->>>>>>> Stashed changes
 
 if __name__ == "__main__":
     # System Guard
