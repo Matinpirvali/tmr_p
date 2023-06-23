@@ -7,7 +7,9 @@ try:
     from tkinter import *
     from customtkinter import *
     from datetime import datetime
+
     # from lib import sound_ef
+    from lib.pages import loading_page
 except ModuleNotFoundError:
     print('App need Python3\nPelease install requirements : with "pip install -r GUI/lib/requirements.txt"\n')
 
@@ -19,13 +21,9 @@ def run_l():
     def main_bot():
         def about():
             pass
+        
         def button_send_main():
-
-            def button_send_task():
-                pass
-            
-            if 1 == 1:
-                button_send_main()
+            pass
 
         home = CTk()
         home.title('TMR_P')
@@ -61,12 +59,6 @@ def run_l():
 
     def log():
         def simulate_loading():
-            progress_bar.start(10) # Start the progress bar animation
-            # Simulate a loading process
-            # You can replace this with your actual loading logic
-            # Here, we're using a simple time delay to simulate the loading process
-            # The window will stay open until this function call ends.
-
             # check network connection
             url = 'http://www.google.com/'
             timeout = 5
@@ -94,30 +86,9 @@ def run_l():
             log = open(path, 'w')
             log.write(furme)
             log.close()
-            root.destroy()
-            root.after(3000, finish_loading)
-
-        def finish_loading():
-            progress_bar.stop()  # Stop the progress bar animation
-            root.destroy()  # Close the loading menu and proceed to the main application
-
-        root = Tk()
-        root.title("Loading Menu")
-        root.geometry("300x100")
-
-        # Create a frame
-        frame = ttk.Frame(root)
-        frame.pack(pady=20)
-
-        # Create a progress bar
-        progress_bar = ttk.Progressbar(frame, orient="horizontal", mode="indeterminate")
-        progress_bar.pack(pady=10)
-
-        # Create a button to start the loading process
-        start_button = ttk.Button(frame, text="Start", command=simulate_loading)
-        start_button.pack()
-
-        root.mainloop()
+        
+        loading_page.loading_page()
+        simulate_loading()
 
     log()
     main_bot()
