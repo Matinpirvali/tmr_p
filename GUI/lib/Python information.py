@@ -1,10 +1,8 @@
-Answer=0
-Answer2=0
-n=0
 def science(scarf):
-    global Answer2
-    global n
-    global Answer
+    
+    Answer=0
+    Answer2=0
+    n=0
     if "back" == scarf or "Back" == scarf:
         n= 0
 
