@@ -16,7 +16,6 @@ try:
     from lib.lin import run_l
     from lib.pages import loading_page
 except ModuleNotFoundError:
-    
     try:
         system('pip3 install datetime')
         system('pip3 install requests')
