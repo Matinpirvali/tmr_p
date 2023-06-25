@@ -2,7 +2,7 @@
 Answer=0
 Answer2=0
 n=0
-def science():
+def science(scarf):
     global Answer2
     global n
     global Answer
