@@ -1,15 +1,4 @@
 # BDadmehr0 - Garfox
-# BDadmehr0 - Garfox
-
-def installion():
-    try:
-        system('pip3 install datetime')
-        system('pip3 install requests')
-        system('pip3 install playsound')
-        system('pip3 install customtkinter')
-    except:
-        print('install fail')
-installion()
 try:
     import platform
     import subprocess
@@ -27,7 +16,15 @@ try:
     from lib.lin import run_l
     from lib.pages import loading_page
 except ModuleNotFoundError:
-    print('App need Python3\nPelease install requirements : with "pip install -r GUI/lib/requirements.txt"\n')
+    
+    try:
+        system('pip3 install datetime')
+        system('pip3 install requests')
+        system('pip3 install playsound')
+        system('pip3 install customtkinter')
+    except:
+        print('install fail')
+
 
 
 def run_w():

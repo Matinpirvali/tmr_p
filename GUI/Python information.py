@@ -662,4 +662,5 @@ def science():
         bot_lb = CTkLabel(frame_bot, text='Answer2', font=('Roboto', 20), corner_radius=0)
         bot_lb.pack(padx=12, pady=12, side=LEFT)
         Answer2=0
-    
+
+science()
