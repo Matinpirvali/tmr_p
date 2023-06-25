@@ -12,7 +12,7 @@ try:
     from datetime import datetime
     from os import system
 
-        # from lib import sound_ef
+    # from lib import sound_ef
     from lib.lin import run_l
     from lib.pages import loading_page
 except ModuleNotFoundError:
