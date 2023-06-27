@@ -1,4 +1,3 @@
-
 def science(scarf):
     Answer=0
     Answer2=0
@@ -32,7 +31,6 @@ def science(scarf):
         if "هشتم" in scarf and "درس" in scarf and "یک" in scarf and "انگلیسی" in scarf and "صفحه" in scarf and "16" in scarf or ("هشتم" and "درس" and "یک" and "انگلیسی" and "صفحه" and "هجدهم") in scarf or ("هشتم" and "درس" and "1" and "انگلیسی" and "صفحه" and "18") in scarf:
             Answer2="نقش شما احسان هست(Ehsan)"
             n=108
-        #
         ##############################درس هفت انگلیسی صفحه 54 هشتم#######################################
         if "هشتم" in scarf and "درس" in scarf and "هفت" in scarf and "انگلیسی" in scarf and "صفحه" in scarf and "54" in scarf or ("هشتم" and "درس" and "هفت" and "انگلیسی" and "صفحه" and "پنجاه و چهار") in scarf or ("هشتم" and "درس" and "7" and "انگلیسی" and "صفحه" and "54") in scarf:
             Answer2="شما نقش زهرا را دارید"
@@ -660,4 +658,3 @@ def science(scarf):
     if Answer2!=0:
         Answer2=0
         return Answer2
-    
