@@ -651,10 +651,38 @@ def science(scarf):
 
             n=0
 
-    if Answer!=0:
-        Answer=0
-        return Answer
 
-    if Answer2!=0:
-        Answer2=0
-        return Answer2
+    if Answer!=0:
+        print(Answer)
+        home = CTk()
+    	home.title('TMR_P')
+    	home.geometry('600x600')
+    	home.resizable(width=False, height=False)
+
+    	# BOT Aseets
+    	frame_bot = CTkFrame(home)
+    	frame_bot.pack(padx=10, pady=12, fill=X)
+
+    	bot_tit_lb = CTkLabel(frame_bot, text='Bot', font=('Roboto', 25), corner_radius=0)
+    	bot_tit_lb.pack(padx=12, pady=12 side=TOP)
+
+    	bot_lb = CTkLabel(frame_bot, text=Answer, font=('Roboto', 20), corner_radius=0)
+    	bot_lb.pack(padx=12, pady=12, side=LEFT)
+        Answer=0
+        
+	if Answer2 !=0:
+    	home = CTk()
+    	home.title('TMR_P')
+    	home.geometry('600x600')
+    	home.resizable(width=False, height=False)
+
+    	# BOT Aseets
+    	frame_bot = CTkFrame(home)
+    	frame_bot.pack(padx=10, pady=12, fill=X)
+
+    	bot_tit_lb = CTkLabel(frame_bot, text='Bot', font=('Roboto', 25), corner_radius=0)
+    	bot_tit_lb.pack(padx=12, pady=12 side=TOP)
+
+    	bot_lb = CTkLabel(frame_bot, text=Answer2, font=('Roboto', 20), corner_radius=0)
+    	bot_lb.pack(padx=12, pady=12, side=LEFT)
+
