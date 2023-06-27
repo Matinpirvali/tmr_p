@@ -34,7 +34,7 @@ def run_w():
     def about():
         pass
     def Bot_tmrp():
-        science (qust_user_ent.get())
+        science(qust_user_ent.get())
     def button_send_main():
         def button_send_task():
             pass
