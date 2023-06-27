@@ -670,7 +670,7 @@ def science(scarf):
     	bot_lb.pack(padx=12, pady=12, side=LEFT)
         Answer=0
         
-	if Answer2 !=0:
+    if Answer2 !=0:
     	home = CTk()
     	home.title('TMR_P')
     	home.geometry('600x600')
@@ -685,4 +685,4 @@ def science(scarf):
 
     	bot_lb = CTkLabel(frame_bot, text=Answer2, font=('Roboto', 20), corner_radius=0)
     	bot_lb.pack(padx=12, pady=12, side=LEFT)
-
+        Answer2=0
