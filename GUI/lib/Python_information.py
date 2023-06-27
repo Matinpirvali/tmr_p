@@ -1,8 +1,9 @@
+
 def science(scarf):
-    
     Answer=0
     Answer2=0
     n=0
+    
     if "back" == scarf or "Back" == scarf:
         n= 0
 
@@ -651,11 +652,12 @@ def science(scarf):
         ################################پایان درس شش انگلیسی صفحه 96 نهم################################
 
             n=0
+
     if Answer!=0:
-        bot_lb = CTkLabel(frame_bot, text='Answer', font=('Roboto', 20), corner_radius=0)
-        bot_lb.pack(padx=12, pady=12, side=LEFT)
         Answer=0
+        return Answer
+
     if Answer2!=0:
-        bot_lb = CTkLabel(frame_bot, text='Answer2', font=('Roboto', 20), corner_radius=0)
-        bot_lb.pack(padx=12, pady=12, side=LEFT)
         Answer2=0
+        return Answer2
+    

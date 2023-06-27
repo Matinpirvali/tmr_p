@@ -9,3 +9,4 @@ my_image = customtkinter.CTkImage(light_image=Image.open("<path to light mode im
 
 button = customtkinter.CTkButton(app, image=my_image)
 
+
