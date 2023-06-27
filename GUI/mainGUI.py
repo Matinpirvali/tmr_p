@@ -13,6 +13,7 @@ try:
     from os import system
 
     # from lib import sound_ef
+    from lib.Python_information import science
     from lib.lin import run_l
     from lib.pages import loading_page
 except ModuleNotFoundError:
@@ -32,7 +33,8 @@ def run_w():
 
     def about():
         pass
-
+    def Bot_tmrp():
+        science (qust_user_ent.get())
     def button_send_main():
         def button_send_task():
             pass
@@ -66,7 +68,7 @@ def run_w():
     qust_user_ent = CTkEntry(frame_user, width=500, font=('Bold', 25), corner_radius=0)
     qust_user_ent.pack(side=LEFT)
 
-    send_btn = CTkButton(frame_user, text='✔️', font=('bold', 25), corner_radius=0, command=button_send_main)
+    send_btn = CTkButton(frame_user, text='✔️', font=('bold', 25), corner_radius=0, command=Bot_tmrp)
     send_btn.pack(side=LEFT)
 
     home.mainloop()
