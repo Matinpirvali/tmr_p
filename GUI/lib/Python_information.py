@@ -1,14 +1,18 @@
+from tkinter import ttk
+from tkinter import *
+from customtkinter import *
+
 def science(scarf):
-    Answer=0
-    Answer2=0
-    n=0
-    
+    print(1)
+    Answer = 0
+    Answer2 = 0
+    n = 0
     if "back" == scarf or "Back" == scarf:
         n= 0
 
     if n==0:
         ##################################درس شش انگلیسی صفحه 96 نهم#######################################
-        if "هشتم" in scarf and "درس" in scarf and "شش" in scarf and "انگلیسی" in scarf and "صفحه" in scarf and "96" in scarf or ("هشتم" and "درس" and "شش" and "انگلیسی" and "صفحه" and "نود و شش") in scarf or ("هشتم" and "درس" and "6" and "انگلیسی" and "صفحه" and "96") in scarf:
+        if "هشتم" in scarf and "درس" in scarf and "شش" in scarf and "انگلیسي" in scarf and "صفحه" in scarf and "96" in scarf or ("هشتم" and "درس" and "شش" and "انگلیسی" and "صفحه" and "نود و شش") in scarf or ("هشتم" and "درس" and "6" and "انگلیسی" and "صفحه" and "96") in scarf:
             Answer2="نقش شما رضا هست(Reza)"
             n=149
         ###################################درس پنج انگلیسی صفحه 82 نهم########################################
@@ -31,6 +35,7 @@ def science(scarf):
         if "هشتم" in scarf and "درس" in scarf and "یک" in scarf and "انگلیسی" in scarf and "صفحه" in scarf and "16" in scarf or ("هشتم" and "درس" and "یک" and "انگلیسی" and "صفحه" and "هجدهم") in scarf or ("هشتم" and "درس" and "1" and "انگلیسی" and "صفحه" and "18") in scarf:
             Answer2="نقش شما احسان هست(Ehsan)"
             n=108
+        #
         ##############################درس هفت انگلیسی صفحه 54 هشتم#######################################
         if "هشتم" in scarf and "درس" in scarf and "هفت" in scarf and "انگلیسی" in scarf and "صفحه" in scarf and "54" in scarf or ("هشتم" and "درس" and "هفت" and "انگلیسی" and "صفحه" and "پنجاه و چهار") in scarf or ("هشتم" and "درس" and "7" and "انگلیسی" and "صفحه" and "54") in scarf:
             Answer2="شما نقش زهرا را دارید"
@@ -89,7 +94,7 @@ def science(scarf):
             n=12
 
         ##################### پرسش درس چهار انگلیسی هفتم صفحه 22##############
-        elif "هفتم" in scarf and "درس" in scarf and "چهار" in scarf and "انگلیسی" in scarf and "صفحه" in scarf and "22" in scarf or ("هفتم"and "درس" and "چهار" and "انگلیسی" and "صفحه" and "بیست و دو") in scarf or ("هفتم" and "درس" and "4" and "انگلیسی" and "صفحه" and "22") in scarf:
+        elif "هفتم" in scarf and "درس" in scarf and "چهار" in scarf and "انگلیسي" in scarf and "صفحه" in scarf and "22" in scarf or ("هفتم"and "درس" and "چهار" and "انگلیسی" and "صفحه" and "بیست و دو") in scarf or ("هفتم" and "درس" and "4" and "انگلیسی" and "صفحه" and "22") in scarf:
             Answer2= "Nice picture! Is that your father?"
             n = 4
 
@@ -647,14 +652,41 @@ def science(scarf):
         elif n==155:
             if "Sure!"!=scarf:
                 Answer="Sure!"
+            n = 0
         ################################پایان درس شش انگلیسی صفحه 96 نهم################################
 
-            n=0
+    print(Answer)
+    print(Answer2)
+    if Answer != 0:
+        print(Answer)
+        home = CTk()
+        home.title('TMR_P')
+        home.geometry('600x600')
+        home.resizable(width=False, height=False)
 
-    if Answer!=0:
-        Answer=0
-        return Answer
+        # BOT Aseets
+        frame_bot = CTkFrame(home)
+        frame_bot.pack(padx=10, pady=12, fill=X)
+
+        bot_tit_lb = CTkLabel(frame_bot, text=Answer, font=('Roboto', 25), corner_radius=0)
+        bot_tit_lb.pack(padx=12, pady=12, side=TOP)
+
+        Answer = 0
+        home.mainloop()
 
     if Answer2!=0:
-        Answer2=0
-        return Answer2
+        home = CTk()
+        home.title('TMR_P')
+        home.geometry('600x600')
+        home.resizable(width=False, height=False)
+
+        # BOT Aseets
+        frame_bot = CTkFrame(home)
+        frame_bot.pack(padx=10, pady=12, fill=X)
+
+        bot_lb = CTkLabel(frame_bot, text=Answer2, font=('Roboto', 20), corner_radius=0)
+        bot_lb.pack(padx=12, pady=12, side=LEFT)
+
+
+        Answer2 = 0
+        home.mainloop()
