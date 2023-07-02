@@ -6,7 +6,7 @@ def science(scarf):
     print(1)
     Answer = 0
     Answer2 = 0
-    n = 0
+    global n
     if "back" == scarf or "Back" == scarf:
         n= 0
 
