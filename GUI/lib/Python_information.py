@@ -2,6 +2,7 @@ from tkinter import ttk
 from tkinter import *
 from customtkinter import *
 
+n=0
 def science(scarf):
     print(1)
     Answer = 0
