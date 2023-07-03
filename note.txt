@@ -6,3 +6,71 @@ my_image = customtkinter.CTkImage(light_image=Image.open("<path to light mode im
                                   size=(30, 30))
 
 button = customtkinter.CTkButton(app, image=my_image)
+
+#
+
+
+
+import nltk
+from nltk.tokenize import word_tokenize
+from nltk.corpus import stopwords
+from nltk.stem import WordNetLemmatizer
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.metrics.pairwise import cosine_similarity
+
+# دانلود داده‌های ضروری
+nltk.download('punkt')
+nltk.download('wordnet')
+nltk.download('stopwords')
+
+# تعریف توابع پردازش زبان طبیعی
+def preprocess_text(text):
+    # توکن‌بندی متن
+    tokens = word_tokenize(text.lower())
+    
+    # حذف کلمات پرتکرار
+    stop_words = set(stopwords.words('english'))
+    tokens = [token for token in tokens if token not in stop_words]
+    
+    # لماتیزاسیون
+    lemmatizer = WordNetLemmatizer()
+    tokens = [lemmatizer.lemmatize(token) for token in tokens]
+    
+    return ' '.join(tokens)
+
+# تعریف داده‌های آموزشی
+training_data = [
+    "نظریه عمومی نسبی این است که جرم و انرژی فضا و زمان را انعطاف‌پذیر می‌کند.",
+    "نظریه داروین درباره تکامل و انتخاب طبیعی می‌باشد.",
+    "نظریه کوانتومی به تفسیر رفتار میکروسکوپی ذرات می‌پردازد."
+]
+
+# پیش‌پردازش داده‌های آموزشی
+preprocessed_training_data = [preprocess_text(data) for data in training_data]
+
+# استخراج ویژگی‌ها با استفاده از TF-IDF
+vectorizer = TfidfVectorizer()
+tfidf_matrix = vectorizer.fit_transform(preprocessed_training_data)
+
+# مثالی از اجرای بات
+while True:
+    user_question = input("سوال خود را مطرح کنید: ")
+    
+    # پیش‌پردازش سوال کاربر
+    preprocessed_question = preprocess_text(user_question)
+    
+    # استخراج ویژگی‌های سوال کاربر با استفاده از TF-IDF
+    tfidf_question = vectorizer.transform([preprocessed_question])
+    
+    # محاسبه شباهت کیسنی بین سوال کاربر و داده‌های آموزشی
+    similarity_scores = cosine_similarity(tfidf_question, tfidf_matrix)[0]
+    
+    # پیدا کردن داده‌های آموزشی با بیشترین شباهت
+    max_similarity_index = similarity_scores.argmax()
+    
+    # نمایش پاسخ
+    if similarity_scores[max_similarity_index] > 0:
+        answer = training_data[max_similarity_index]
+        print("پاسخ: " + answer)
+    else:
+        print("متأسفم، نمی‌توانم به این سوال پاسخ دهم.")
