@@ -1,29 +1,15 @@
 # BDadmehr0 - Garfox
-try:
-    import platform
-    import subprocess
-    import requests
-    import time
-    import threading
 
-    from tkinter import ttk
-    from tkinter import *
-    from customtkinter import *
-    from datetime import datetime
-    from os import system
+import platform
 
-    # from lib import sound_ef
-    from lib.Python_information import science
-    from lib.lin import run_l
-    from lib.pages import loading_page
-except ModuleNotFoundError:
-    try:
-        system('pip3 install datetime')
-        system('pip3 install requests')
-        system('pip3 install playsound')
-        system('pip3 install customtkinter')
-    except:
-        print('install fail')
+from customtkinter import *
+from datetime import datetime
+from os import system
+
+# from lib import sound_ef
+from assets.Python_information import science
+from lib.lin import run_l
+from lib.pages import loading_page
 
 
 

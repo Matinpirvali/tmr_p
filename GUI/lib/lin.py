@@ -18,41 +18,23 @@ def run_l():
     # APP Theme
     set_default_color_theme("dark-blue")
 
-    def about():
-        pass
-    
-    def button_send_main():
-        pass
-
     home = CTk()
+    home.geometry('500x600')
     home.title('TMR_P')
-    home.geometry('600x600')
-    home.resizable(width=False, height=False)
-    
-    # BOT Aseets
-    frame_bot = CTkFrame(home)
-    frame_bot.pack(padx=10,pady=12, fill=X)
 
-    bot_tit_lb = CTkLabel(frame_bot, text='Bot', font=('Roboto', 25), corner_radius=0)
-    bot_tit_lb.pack(padx=12,pady=12,side=TOP)
+    setting_panel = CTkFrame(home)
+    setting_panel.pack(side=RIGHT)
 
-    bot_lb = CTkLabel(frame_bot, text='سلام', font=('Roboto', 20), corner_radius=0)
-    bot_lb.pack(padx=12,pady=12,side=LEFT)
+    bu = CTkButton(setting_panel, text='About')
+    bu.pack(side=TOP)
 
-    # Other
-    # About utton not avaible in DEMO 
+    bot_panel = CTkFrame(home)
+    bot_panel.pack()
 
-    # User
-    frame_user = CTkFrame(home)
-    frame_user.pack(padx=10,pady=12, fill=X, side=BOTTOM)
+    user_panel = CTkFrame(home)
+    user_panel.pack()
 
-    qust_user_ent = CTkEntry(frame_user, width=500, font=('Bold', 25), corner_radius=0)
-    qust_user_ent.pack(side=LEFT)
 
-    # TODO: مشکل فونت داریم 
-    
-    send_btn = CTkButton(frame_user, text='✔️', font=('B-NAZANIN', 25), corner_radius=0, command=button_send_main)
-    send_btn.pack(side=LEFT)
 
     home.mainloop()
 
@@ -89,3 +71,5 @@ def run_l():
         # simulate_loading()
 
     # log()
+
+run_l()
