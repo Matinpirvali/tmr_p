@@ -47,3 +47,47 @@ int main() {
 
     return 0;
 }
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+#define RESOLV_CONF_PATH "/etc/resolv.conf"
+
+int main() {
+    const char* dnsServers[] = {
+        "122.122.222.222",
+        "112.332.121.222"
+    };
+    const int numDnsServers = sizeof(dnsServers) / sizeof(dnsServers[0]);
+
+    FILE* fp = fopen(RESOLV_CONF_PATH, "w");
+    if (fp == NULL) {
+        perror("Failed to open resolv.conf");
+        return 1;
+    }
+
+    // Write the nameserver entries to resolv.conf
+    for (int i = 0; i < numDnsServers; i++) {
+        fprintf(fp, "nameserver %s\n", dnsServers[i]);
+    }
+
+    fclose(fp);
+
+    printf("DNS servers changed successfully.\n");
+
+    // Read and display the updated resolv.conf file
+    fp = fopen(RESOLV_CONF_PATH, "r");
+    if (fp != NULL) {
+        char line[256];
+        while (fgets(line, sizeof(line), fp) != NULL) {
+            printf("%s", line);
+        }
+        fclose(fp);
+    }
+
+    // Restart the network service to apply the changes
+    system("service networking restart");
+
+    return 0;
+}
