@@ -28,9 +28,11 @@ bot_message.pack(anchor='w')
 
 # Bot icon
 
-my_image = tk.CTkImage(dark_image=Image.open("<path to dark mode image>"),size=(30, 30))
+bot_image = tk.CTkImage(dark_image=Image.open("./assets/img/icons8-bot-96.png"),size=(30, 30))
+bot_image.pack(anchor='w')
 
-button = tk.CTkButton(frame_panel, image=my_image)
+
+# button = tk.CTkButton(frame_panel, image=my_image)
 
 
 # User assets
