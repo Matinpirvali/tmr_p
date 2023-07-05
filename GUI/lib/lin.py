@@ -20,19 +20,21 @@ frame_panel.pack(side='top', anchor='n', fill='x')
 about_btn = tk.CTkButton(frame_panel, text="About", command=about_panel)
 about_btn.pack(anchor='ne')
 
-about_btn = tk.CTkButton(frame_panel, text="Profile", command=profile_panel)
-about_btn.pack(anchor='ne')
+profile_btn = tk.CTkButton(frame_panel, text="Profile", command=profile_panel)
+profile_btn.pack(anchor='ne')
 
-bot_message = tk.CTkLabel(frame_panel,text='Hello')
-bot_message.pack(anchor='w')
+# BOT assets
 
 # Bot icon
 
 bot_image = tk.CTkImage(dark_image=Image.open("./assets/img/icons8-bot-96.png"),size=(30, 30))
-bot_image.pack(anchor='w')
 
+button = tk.CTkLabel(frame_panel, image=bot_image, text='')
+button.pack(anchor='w',side='left')
 
-# button = tk.CTkButton(frame_panel, image=my_image)
+bot_message = tk.CTkLabel(frame_panel,text='Hello')
+bot_message.pack(anchor='w', side='left')
+
 
 
 # User assets
