@@ -27,12 +27,12 @@ profile_btn.pack(anchor='ne')
 
 # Bot icon
 
-bot_image = tk.CTkImage(dark_image=Image.open("./assets/img/icons8-bot-96.png"),size=(30, 30))
+bot_image = tk.CTkImage(dark_image=Image.open("./assets/img/icons8-bot-96.png"),size=(50, 50))
 
-button = tk.CTkLabel(frame_panel, image=bot_image, text='')
-button.pack(anchor='w',side='left')
+image_lb = tk.CTkLabel(frame_panel, image=bot_image, text='')
+image_lb.pack(anchor='w',side='left')
 
-bot_message = tk.CTkLabel(frame_panel,text='Hello')
+bot_message = tk.CTkLabel(frame_panel, text='Hello', font=('Arial', 20))
 bot_message.pack(anchor='w', side='left')
 
 
