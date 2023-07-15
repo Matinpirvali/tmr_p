@@ -8,8 +8,9 @@ from os import system
 
 # from lib import sound_ef
 from lib.assets.Python_information import science
-from lib.lin import run_l
 from lib.pages import loading_page
+from lib.lin import run_l
+from lib.win import run_w
 
 if __name__ == "__main__":
     # System Guard
