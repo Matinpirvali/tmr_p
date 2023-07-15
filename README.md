@@ -1,5 +1,5 @@
 <img src="https://raw.githubusercontent.com/Matinpirvali/tmr_p/main/GUI/lib/assets/img/photo144176761544017590(1).png" align="right"
-     alt="Size Limit logo by Anton Lovchikov" width="200" height="150">
+     alt="Size Limit logo by Anton Lovchikov" width="120" height="178">
 
 # 📃 About
 
@@ -15,6 +15,10 @@ Using artificial intelligence technologies, I have designed a learning robot kno
 <p align="center">
   <img src="./examples/rev.png" alt="Size Limit CLI" width="738">
 </p>
+
+## How It Works
+
+This program finds the best answer for you by using various sources including textbooks and non-textbooks, electronic materials and Wikipedia. Also, it uses [Shecan](https://shecan.ir/) technology to bypass sanctions.
 
 # 📥 Installion
 
