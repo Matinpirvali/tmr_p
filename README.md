@@ -25,6 +25,10 @@ If you are also looking for a smart and efficient solution to improve your learn
 
 6. Ability to interact with users: TMR_P is able to interact with its users and respond to their needs in a more personal and better way through conversations with them.
 
+<p align="center">
+  <img src="./examples/rev.png" alt="Size Limit CLI" width="738">
+</p>
+
 # 📥 Installion
 
 ```bash
