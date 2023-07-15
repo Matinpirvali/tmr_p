@@ -20,7 +20,7 @@ def run_l():
 
     # About button
     about_btn = tk.CTkButton(frame_panel, text="About", command=about_panel, width=100, font=('bold', 15))
-    about_btn.pack(padx=12, pady=1, anchor='ne')
+    about_btn.pack(padx=12, pady=5, anchor='ne')
 
     profile_btn = tk.CTkButton(frame_panel, text="Profile", command=profile_panel, width=100, font=('bold', 15))
     profile_btn.pack(padx=12, pady=1, anchor='ne')
@@ -32,7 +32,7 @@ def run_l():
     bot_image = tk.CTkImage(dark_image=Image.open("./assets/img/icons8-bot-96.png"),size=(50, 50))
 
     image_lb = tk.CTkLabel(frame_panel, image=bot_image, text='')
-    image_lb.pack(anchor='w',side='left')
+    image_lb.pack(padx=12, pady=1, anchor='w',side='left')
 
     bot_message = tk.CTkLabel(frame_panel, text='Hello', font=('Arial', 20))
     bot_message.pack(anchor='w', side='left')
@@ -43,7 +43,7 @@ def run_l():
     user_frame = tk.CTkFrame(window)
     user_frame.pack(padx=12, pady=10, anchor='s', fill='x', side='bottom')
 
-    user_i = tk.CTkEntry(user_frame, width=365, font=('Roboto', 17))
+    user_i = tk.CTkEntry(user_frame, width=375, font=('Roboto', 17))
     user_i.pack(padx=12, pady=10, side='left')
 
     

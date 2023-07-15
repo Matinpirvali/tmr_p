@@ -1,6 +1,7 @@
 # BDadmehr0 - Garfox
 
 import platform
+import os
 
 from customtkinter import *
 from datetime import datetime
@@ -13,7 +14,10 @@ from lib.lin import run_l
 
 if __name__ == "__main__":
     # System Guard
-
+    try:
+        os.system('clear')
+    except:
+        os.system('cls')
     osn = platform.system()
     if osn == 'Linux':
         print(f'System Guard Verifred os: {osn}')
