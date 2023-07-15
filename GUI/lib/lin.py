@@ -10,7 +10,7 @@ def profile_panel():
 # Main Seeting up
 window = tk.CTk()
 window.geometry('550x600')
-
+# window.iconbitmap('/home/dadmehremami/Documents/GitHub/tmr_p/GUI/lib/assets/icon.ico')
 
 # Other assets
 frame_panel = tk.CTkFrame(window)
@@ -36,8 +36,6 @@ bot_message = tk.CTkLabel(frame_panel, text='Hello', font=('Arial', 20))
 bot_message.pack(anchor='w', side='left')
 
 
-
 # User assets
 
-# نمایش پنجره
 window.mainloop()

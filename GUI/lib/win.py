@@ -1,4 +1,4 @@
-from lib.assets.Python_information import science
+from tmr_p.GUI.lib.Python_information import science
 from customtkinter import *
 
 def run_w():
