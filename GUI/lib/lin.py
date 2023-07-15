@@ -19,11 +19,11 @@ def run_l():
     frame_panel.pack(side='top', anchor='n', fill='x')
 
     # About button
-    about_btn = tk.CTkButton(frame_panel, text="About", command=about_panel, corner_radius=0, width=100, font=('bold', 15))
-    about_btn.pack(anchor='ne')
+    about_btn = tk.CTkButton(frame_panel, text="About", command=about_panel, width=100, font=('bold', 15))
+    about_btn.pack(padx=12, pady=1, anchor='ne')
 
-    profile_btn = tk.CTkButton(frame_panel, text="Profile", command=profile_panel, corner_radius=0, width=100, font=('bold', 15))
-    profile_btn.pack(anchor='ne')
+    profile_btn = tk.CTkButton(frame_panel, text="Profile", command=profile_panel, width=100, font=('bold', 15))
+    profile_btn.pack(padx=12, pady=1, anchor='ne')
 
     # BOT assets
 
@@ -43,17 +43,13 @@ def run_l():
     user_frame = tk.CTkFrame(window)
     user_frame.pack(padx=12, pady=10, anchor='s', fill='x', side='bottom')
 
-    user_i = tk.CTkEntry(user_frame)
-    user_i.pack(padx=12, pady=10)
+    user_i = tk.CTkEntry(user_frame, width=365, font=('Roboto', 17))
+    user_i.pack(padx=12, pady=10, side='left')
 
     
+    user_send_btn_img = tk.CTkImage(dark_image=Image.open("./assets/img/send.png") , size=(30, 30))
 
-    
-    user_send_btn_img = tk.CTkImage(light_image=Image.open("<path to light mode image>"),
-                                  dark_image=Image.open("<path to dark mode image>"),
-                                  size=(30, 30))
-
-    user_send_btn = tk.CTkButton(user_frame, image=user_send_btn_img)
-    user_send_btn.pack(padx=12, pady=10)
+    user_send_btn = tk.CTkButton(user_frame, image=user_send_btn_img, text='', corner_radius=100, width=100, font=('bold', 15))
+    user_send_btn.pack(padx=12, pady=10, side='right')
 
     window.mainloop()
