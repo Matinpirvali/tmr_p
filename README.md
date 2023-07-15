@@ -1,7 +1,7 @@
 <img src="https://raw.githubusercontent.com/Matinpirvali/tmr_p/main/GUI/lib/assets/img/photo144176761544017590(1).png" align="right"
      alt="Size Limit logo by Anton Lovchikov" width="120" height="178">
 
-# 📃 About
+# About
 
 Using artificial intelligence technologies, I have designed a learning robot known as TMR_P. The main purpose of this robot is to help students and those interested in learning. With this robot, students can easily and quickly get answers to their questions and use various educational resources.
 
@@ -20,7 +20,7 @@ Using artificial intelligence technologies, I have designed a learning robot kno
 
 This program finds the best answer for you by using various sources including textbooks and non-textbooks, electronic materials and Wikipedia. Also, it uses [Shecan](https://shecan.ir/) technology to bypass sanctions.
 
-# Installion
+## Installion
 
 ```bash
 $ git clone https://github.com/Matinpirvali/tmr_p.git
@@ -28,7 +28,7 @@ $ cd tmr_p
 $ pip install -r requirements.txt
 ```
 
-# ▶️ Run 
+## Run 
 ```bash
 $ python3 /GUI/mainGUI.py
 ```
