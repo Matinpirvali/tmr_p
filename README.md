@@ -1,5 +1,5 @@
 <img src="https://raw.githubusercontent.com/Matinpirvali/tmr_p/main/GUI/lib/assets/img/photo144176761544017590(1).png" align="right"
-     alt="Size Limit logo by Anton Lovchikov" width="120" height="178">
+     alt="Size Limit logo by Anton Lovchikov" width="500" height="300">
 
 # 📃 About
 
