@@ -25,29 +25,10 @@ This program finds the best answer for you by using various sources including te
 ```bash
 $ git clone https://github.com/Matinpirvali/tmr_p.git
 $ cd tmr_p
-$ chmod +x ./install.sh
-$ sudo ./install.sh
+$ pip install -r requirements.txt
 ```
 
 # ▶️ Run 
-
-run Backend app (Unix-Terminal)
-
 ```bash
-$ python3 main.py
-```
-
-run GUI app
-
-```bash
-$ cd GUI
-$ python3 main.py
-```
-# 📥 Requirements
-
-```bash
-datetime==5.1
-requests==2.22.0
-playsound==1.3.0
-customtkinter==5.1.3
+$ python3 /GUI/mainGUI.py
 ```
