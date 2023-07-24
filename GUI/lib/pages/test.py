@@ -30,7 +30,7 @@ def i(scarf):
         if l!=0:
             print(45)
             # باز کردن فایل و خواندن خط‌ها
-            with open('information.txt', 'r', encoding='utf-8') as file:
+            with open('./information.txt', 'r', encoding='utf-8') as file:
                 lines = file.readlines()
 
             # استخراج خط دوم (در صورت وجود)
