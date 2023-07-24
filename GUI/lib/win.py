@@ -1,78 +1,55 @@
-# from pages.Python_information import science
-# from customtkinter import *
+from PIL import Image
+import customtkinter as tk
 
-# def run_w():
-#     # APP Theme
-#     set_default_color_theme("dark-blue")
+def run_l():
 
-#     def about():
-#         pass
-#     def Bot_tmrp():
-#         science(qust_user_ent.get())
-#     def button_send_main():
-#         def button_send_task():
-#             pass
+    def about_panel():
+        print("Button clicked!")
 
-#         if 1 == 1:
-#             button_send_main()
+    def profile_panel():
+        print('profile')
 
-#     home = CTk()
-#     home.title('TMR_P')
-#     home.geometry('600x600')
-#     home.resizable(width=False, height=False)
+    # Main Seeting up
+    window = tk.CTk()
+    window.geometry('550x600')
+    # window.iconbitmap('/home/dadmehremami/Documents/GitHub/tmr_p/GUI/lib/assets/icon.ico')
 
-#     # BOT Aseets
-#     frame_bot = CTkFrame(home)
-#     frame_bot.pack(padx=10, pady=12, fill=X)
+    # Other assets
+    frame_panel = tk.CTkFrame(window)
+    frame_panel.pack(side='top', anchor='n', fill='x')
 
-#     bot_tit_lb = CTkLabel(frame_bot, text='Bot', font=('Roboto', 25), corner_radius=0)
-#     bot_tit_lb.pack(padx=12, pady=12, side=TOP)
+    # About button
+    about_btn = tk.CTkButton(frame_panel, text="About", command=about_panel, width=100, font=('bold', 15))
+    about_btn.pack(padx=12, pady=5, anchor='ne')
 
-#     bot_lb = CTkLabel(frame_bot, text='سلام', font=('Roboto', 20), corner_radius=0)
-#     bot_lb.pack(padx=12, pady=12, side=LEFT)
+    profile_btn = tk.CTkButton(frame_panel, text="Profile", command=profile_panel, width=100, font=('bold', 15))
+    profile_btn.pack(padx=12, pady=1, anchor='ne')
 
-#     # Other
-#     About_btn = CTkButton(frame_bot, text='About', corner_radius=0)
-#     About_btn.pack(side=RIGHT)
+    # BOT assets
 
-#     # User
-#     frame_user = CTkFrame(home)
-#     frame_user.pack(padx=10, pady=12, fill=X, side=BOTTOM)
+    # Bot icon
 
-#     qust_user_ent = CTkEntry(frame_user, width=500, font=('Bold', 25), corner_radius=0)
-#     qust_user_ent.pack(side=LEFT)
+    bot_image = tk.CTkImage(dark_image=Image.open("//assets//img//icons8-bot-96.png"),size=(50, 50))
 
-#     send_btn = CTkButton(frame_user, text='✔️', font=('bold', 25), corner_radius=0, command=Bot_tmrp)
-#     send_btn.pack(side=LEFT)
+    image_lb = tk.CTkLabel(frame_panel, image=bot_image, text='')
+    image_lb.pack(padx=12, pady=1, anchor='w',side='left')
 
-#     home.mainloop()
+    bot_message = tk.CTkLabel(frame_panel, text='Hello', font=('Arial', 20))
+    bot_message.pack(anchor='w', side='left')
 
-#     # def log():
-#     #     def simulate_loading():
-#     #         # check network connection
-#     #         url = 'http://www.google.com/'
-#     #         timeout = 5
-#     #         status = ''
 
-#     #         try:
-#     #             _ = requests.head(url, timeout=timeout)
-#     #             status += 'Online'
-#     #         except requests.ConnectionError:
-#     #             status += 'Offline'
-#     #             print("No internet connection available.")
-#     #             return False
+    # User assets
 
-#     #         # Get ip public
-#     #         ip = requests.get('https://api.ipify.org').text
+    user_frame = tk.CTkFrame(window)
+    user_frame.pack(padx=12, pady=10, anchor='s', fill='x', side='bottom')
 
-#     #         # Time & platform
-#     #         time_log = str(datetime.now())
-#     #         platform_log = str(platform.platform())
-#     #         path = 'log//log.json'
+    user_i = tk.CTkEntry(user_frame, width=375, font=('Roboto', 17))
+    user_i.pack(padx=12, pady=10, side='left')
 
-#     #         furme = '{\n    "time": "' + time_log + '",\n    "system": "' + platform_log + '",\n    "IP": "' + ip + '",\n    "status": "' + status + '"\n}\n'
+    
+    user_send_btn_img = tk.CTkImage(dark_image=Image.open("//assets//img//send.png") , size=(30, 30))
 
-#     #         # Save log
-#     #         log = open(path, 'w')
-#     #         log.write(furme)
-#     #         log.close()
+    user_send_btn = tk.CTkButton(user_frame, image=user_send_btn_img, text='', corner_radius=100, width=100, font=('bold', 15))
+    user_send_btn.pack(padx=12, pady=10, side='right')
+
+    window.mainloop()
