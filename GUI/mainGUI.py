@@ -12,6 +12,7 @@ from lib.pages import loading_page
 from lib.lin import run_l
 from lib.win import run_w
 
+
 if __name__ == "__main__":
     # System Guard
 
