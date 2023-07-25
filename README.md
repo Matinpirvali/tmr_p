@@ -2,6 +2,7 @@
      alt="Size Limit logo by Anton Lovchikov" width="120" height="178">
 
 # About
+❗❗❗Risk: Our group is against the exam and please do not use this app for the exam❗❗❗
 
 Using artificial intelligence technologies, I have designed a learning robot known as TMR_P. The main purpose of this robot is to help students and those interested in learning. With this robot, students can easily and quickly get answers to their questions and use various educational resources.
 
