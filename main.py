@@ -62,7 +62,7 @@ class PageTwo_VIDEO(ctk.CTkFrame):
     def __init__(self, parent, controller):
         ctk.CTkFrame.__init__(self, parent)
         self.controller = controller
-        self.new_button_created = False  # فلگ برای نگه‌داری وضعیت دکمه‌ی جدید
+        self.new_frame_status = False  # متغیر برای نگه‌داری دکمه‌ی جدید
 
         # Full Screen Code
         pad=3
@@ -86,23 +86,35 @@ class PageTwo_VIDEO(ctk.CTkFrame):
 
         # تعریف تابع رویداد دکمه با استفاده از lambda
         button_burger_menu.configure(command=self.on_burger_menu_click)
-        
-        # button_change_page = ctk.CTkButton(Header_Row_freame, text="Chat Bot", font=('bold', 13) ,command=lambda: controller.show_frame(PageOne_BOT))
-        # button_change_page.pack(pady=5, padx=10 ,anchor=place.up_right)
 
+        # ---
         search_entry = ctk.CTkEntry(Header_Row_freame, placeholder_text="Search", font=('Roboto', 20), corner_radius=200, width=1000)
         search_entry.pack(pady=5,anchor=place.up)
 
     def on_burger_menu_click(self):
-        if not self.new_button_created:
-            self.create_new_button()
-            self.new_button_created = True
+        if not self.new_frame_status:
+            self.create_frame()
+            self.new_frame_status = True
+        
+    def create_frame(self):
+        setting_frame = ctk.CTkFrame(self, height=900)
+        setting_frame.pack(pady=5, padx=10, anchor=place.right, fill='y')
 
-    def create_freame(self):
-        # کد ایجاد دکمه جدید را در اینجا بنویسید
-        new_freame = ctk.CTkFrame(self)
-        new_freame.pack(pady=5, padx=10, anchor=place.up_right, fill='y')
+        button_bot_page = ctk.CTkButton(setting_frame, text="Chat Bot", font=('bold', 13), width=100,command=lambda: self.show_frame(PageOne_BOT))
+        button_bot_page.pack(pady=5, padx=10 ,anchor=place.up_right)
 
+        button_profile_page = ctk.CTkButton(setting_frame, text="Profile", font=('bold', 13), width=100)
+        button_profile_page.pack(pady=5, padx=10 ,anchor=place.up_right)
+
+        button_exit_page = ctk.CTkButton(setting_frame, text="Exit", font=('bold', 13),fg_color='#B80F0A', hover_color='#7C0A02' ,command=self.exit, width=100)
+        button_exit_page.pack(pady=5, padx=10 ,anchor=place.up_right) 
+        
+    def show_frame(self, cont):
+        frame = self.controller.frames[cont]
+        frame.tkraise()
+
+    def exit(self):
+        exit()
 
     
     # Full Screen function
