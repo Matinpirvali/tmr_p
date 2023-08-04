@@ -62,7 +62,7 @@ class PageTwo_VIDEO(ctk.CTkFrame):
     def __init__(self, parent, controller):
         ctk.CTkFrame.__init__(self, parent)
         self.controller = controller
-        self.new_frame_status = False  # متغیر برای نگه‌داری دکمه‌ی جدید
+        self.new_frame_status = False
 
         # Full Screen Code
         pad=3
@@ -83,8 +83,6 @@ class PageTwo_VIDEO(ctk.CTkFrame):
 
         button_burger_menu = ctk.CTkButton(Header_Row_freame, text="", image=burger_icon, width=60)
         button_burger_menu.pack(pady=5, padx=10, anchor=place.up_right)
-
-        # تعریف تابع رویداد دکمه با استفاده از lambda
         button_burger_menu.configure(command=self.on_burger_menu_click)
 
         # ---
