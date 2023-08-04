@@ -1,1 +1,0 @@
-Anchors are used to define where text is positioned relative to a reference point. Here is list of possible constants, which can be used for Anchor attribute. For example, if you use CENTER as a text anchor, the text will be centered horizontally and vertically around the reference point.
