@@ -25,34 +25,6 @@ class place:
     down_right = "se"
     down_right = "sw"
 
-# Page three setting
-class PageOne_BOT(ctk.CTkFrame):
-    def __init__(self, parent, controller):
-        ctk.CTkFrame.__init__(self, parent)
-        self.controller = controller
-        
-
-        # Full Screen Code
-        pad=1
-        self._geom='500x600+0+0'
-        controller.geometry("{0}x{1}+0+0".format(
-            controller.winfo_screenwidth()-pad, controller.winfo_screenheight()-pad))
-        controller.bind('<F11>',self.toggle_geom)
-
-        # Objects
-
-        label = ctk.CTkLabel(self, text="The is Page one")
-        label.pack(pady=10, padx=10)
-
-        button = ctk.CTkButton(self, text="Go Page Two", command=lambda: controller.show_frame(PageTwo_VIDEO))
-        button.pack(anchor=place.up_right) # anchor="ne"
-
-    # Full Screen function
-    def toggle_geom(self,event):
-        geom=self.controller.winfo_geometry()
-        print(geom,self._geom)
-        self.controller.geometry(self._geom)
-        self._geom=geom
 
 # Page one CHATBOT
 class PageOne_BOT(ctk.CTkFrame):
@@ -86,9 +58,11 @@ class PageOne_BOT(ctk.CTkFrame):
 
 # Page two SHARE_VIDEO
 class PageTwo_VIDEO(ctk.CTkFrame):
+
     def __init__(self, parent, controller):
         ctk.CTkFrame.__init__(self, parent)
         self.controller = controller
+        self.new_button_created = False  # فلگ برای نگه‌داری وضعیت دکمه‌ی جدید
 
         # Full Screen Code
         pad=3
@@ -108,7 +82,10 @@ class PageTwo_VIDEO(ctk.CTkFrame):
         Header_Row_freame.pack(pady=10, padx=10 ,anchor=place.up, fill='x')
 
         button_burger_menu = ctk.CTkButton(Header_Row_freame, text="", image=burger_icon, width=60)
-        button_burger_menu.pack(pady=5, padx=10 ,anchor=place.up_right)
+        button_burger_menu.pack(pady=5, padx=10, anchor=place.up_right)
+
+        # تعریف تابع رویداد دکمه با استفاده از lambda
+        button_burger_menu.configure(command=self.on_burger_menu_click)
         
         # button_change_page = ctk.CTkButton(Header_Row_freame, text="Chat Bot", font=('bold', 13) ,command=lambda: controller.show_frame(PageOne_BOT))
         # button_change_page.pack(pady=5, padx=10 ,anchor=place.up_right)
@@ -116,10 +93,20 @@ class PageTwo_VIDEO(ctk.CTkFrame):
         search_entry = ctk.CTkEntry(Header_Row_freame, placeholder_text="Search", font=('Roboto', 20), corner_radius=200, width=1000)
         search_entry.pack(pady=5,anchor=place.up)
 
+    def on_burger_menu_click(self):
+        if not self.new_button_created:
+            self.create_new_button()
+            self.new_button_created = True
+
+    def create_freame(self):
+        # کد ایجاد دکمه جدید را در اینجا بنویسید
+        new_freame = ctk.CTkFrame(self)
+        new_freame.pack(pady=5, padx=10, anchor=place.up_right, fill='y')
+
 
     
     # Full Screen function
-    def toggle_geom(self,event):
+    def toggle_geom(self, event):
         geom=self.controller.winfo_geometry()
         print(geom,self._geom)
         self.controller.geometry(self._geom)
