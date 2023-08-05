@@ -93,23 +93,33 @@ class PageTwo_VIDEO(ctk.CTkFrame):
         if not self.new_frame_status:
             self.create_frame()
             self.new_frame_status = True
-        
+    
     def create_frame(self):
         setting_frame = ctk.CTkFrame(self, height=900)
         setting_frame.pack(pady=5, padx=10, anchor=place.right, fill='y')
 
-        button_bot_page = ctk.CTkButton(setting_frame, text="Chat Bot", font=('bold', 13), width=100,command=lambda: self.show_frame(PageOne_BOT))
-        button_bot_page.pack(pady=5, padx=10 ,anchor=place.up_right)
+        button_bot_page = ctk.CTkButton(setting_frame, text="Chat Bot", font=('bold', 13), width=145,command=lambda: self.show_frame(PageOne_BOT))
+        button_bot_page.pack(pady=5, padx=10)
 
-        button_profile_page = ctk.CTkButton(setting_frame, text="Profile", font=('bold', 13), width=100)
-        button_profile_page.pack(pady=5, padx=10 ,anchor=place.up_right)
+        button_profile_page = ctk.CTkButton(setting_frame, text="Profile", font=('bold', 13), width=145)
+        button_profile_page.pack(pady=5, padx=10)
 
-        button_exit_page = ctk.CTkButton(setting_frame, text="Exit", font=('bold', 13),fg_color='#B80F0A', hover_color='#7C0A02' ,command=self.exit, width=100)
-        button_exit_page.pack(pady=5, padx=10 ,anchor=place.up_right) 
+        optionmenu_var = ctk.StringVar(value="List of study fields")  # set initial value
+        combobox = ctk.CTkOptionMenu(master=setting_frame,
+                                       values=["Mathematical Physics", "Agricultural engineering and natural resources", "Humanities", "Medical sciences", "language and literature", "Art", "Geology", "biology", "chemistry", "physics", "Mathematics", "computer science"],
+                                       command=self.optionmenu_callback,
+                                       variable=optionmenu_var)
+        combobox.pack(padx=20, pady=10)
+
+        button_exit_page = ctk.CTkButton(setting_frame, text="Exit", font=('bold', 13),fg_color='#B80F0A', hover_color='#7C0A02' ,command=self.exit, width=145)
+        button_exit_page.pack(pady=5, padx=10) 
         
     def show_frame(self, cont):
         frame = self.controller.frames[cont]
         frame.tkraise()
+
+    def optionmenu_callback(self, choice):
+        print("optionmenu dropdown clicked:", choice)
 
     def exit(self):
         exit()
