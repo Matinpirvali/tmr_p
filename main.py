@@ -23,7 +23,7 @@ class place:
     # down
     down = "s"
     down_right = "se"
-    down_right = "sw"
+    down_left = "sw"
 
 
 # Page one CHATBOT
@@ -82,12 +82,22 @@ class PageTwo_VIDEO(ctk.CTkFrame):
         Header_Row_freame.pack(pady=10, padx=10 ,anchor=place.up, fill='x')
 
         button_burger_menu = ctk.CTkButton(Header_Row_freame, text="", image=burger_icon, width=60)
-        button_burger_menu.pack(pady=5, padx=10, anchor=place.up_right)
+        button_burger_menu.pack(pady=5, padx=10, anchor=place.right)
         button_burger_menu.configure(command=self.on_burger_menu_click)
 
         # ---
-        search_entry = ctk.CTkEntry(Header_Row_freame, placeholder_text="Search", font=('Roboto', 20), corner_radius=200, width=1000)
-        search_entry.pack(pady=5,anchor=place.up)
+
+        search_entry = ctk.CTkEntry(Header_Row_freame, placeholder_text="Search keyword", font=('Roboto', 20), corner_radius=200, width=1000)
+        search_entry.pack(pady=5, padx=2, )
+        search_entry.bind("<Return>", self.search_videos)
+
+        self.video_buttons = []
+        self.video_list = [
+                    "Video 1",
+                    "Video 2",
+                    "Video 3",
+                    "Video 4"
+                ]
 
     def on_burger_menu_click(self):
         if not self.new_frame_status:
@@ -123,7 +133,6 @@ class PageTwo_VIDEO(ctk.CTkFrame):
 
     def exit(self):
         exit()
-
     
     # Full Screen function
     def toggle_geom(self, event):
@@ -131,6 +140,27 @@ class PageTwo_VIDEO(ctk.CTkFrame):
         print(geom,self._geom)
         self.controller.geometry(self._geom)
         self._geom=geom
+
+
+    # Search funs
+
+    def play_video(self, video_name):
+        # Video Player
+        print(f"Playing Video: {video_name}")
+
+    def search_videos(self):
+        keyword = self.search_entry.get()
+
+        # Delet Before Button
+        for button in self.video_buttons:
+            button.destroy()
+        
+        for video in self.video_list:
+            if keyword.lower() in video.lower():
+                # Create new Buttons for Videos
+                video_button = ctk.CTkButton(self.root, text=video, command=lambda v=video: self.play_video(v))
+                video_button.grid(row=self.video_list.index(video)+2, column=0, padx=10, pady=5)
+                self.video_buttons.append(video_button)
 
 
 # MAIN 
