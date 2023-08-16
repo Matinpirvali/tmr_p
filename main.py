@@ -2,6 +2,7 @@ import tkinter as tk
 import customtkinter as ctk
 from PIL import Image, ImageTk
 import os
+import platform 
 
 # Places ANCHOR
 class place:
@@ -242,5 +243,6 @@ class MAIN(ctk.CTk):
         frame.tkraise()
 
 if __name__ == "__main__":
+    operating_system=platform.system()
     app = MAIN()
     app.mainloop()
