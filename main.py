@@ -211,7 +211,6 @@ class PageTwo_VIDEO(ctk.CTkFrame):
                 self.video_buttons.append(video_button)
 
 
-
 # MAIN
 class MAIN(ctk.CTk):
     def __init__(self):
