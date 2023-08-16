@@ -1,6 +1,6 @@
 import tkinter as tk
 import customtkinter as ctk
-from PIL import Image
+from PIL import Image, ImageTk
 import os
 
 # Places ANCHOR
@@ -103,7 +103,7 @@ class PageTwo_VIDEO(ctk.CTkFrame):
 
         # Freame Header Row
         self.Header_Row_freame = ctk.CTkFrame(self)
-        self.Header_Row_freame.pack(pady=10, padx=10 ,anchor=place.up, fill='x')
+        self.Header_Row_freame.pack(pady=10, padx=10 ,side='top', fill='x', expand=False)
 
         button_burger_menu = ctk.CTkButton(self.Header_Row_freame, text="", image=self.burger_icon, width=60)
         button_burger_menu.pack(pady=5, padx=10, anchor=place.right)
@@ -114,6 +114,10 @@ class PageTwo_VIDEO(ctk.CTkFrame):
         self.search_entry = ctk.CTkEntry(self.Header_Row_freame, placeholder_text="Search keyword", font=('Roboto', 20), corner_radius=200, width=1000)
         self.search_entry.pack(pady=15, padx=20)
         self.search_entry.bind("<Return>", self.search_videos)
+        self.search_entry.bind("<KP_Enter>", self.search_videos)
+
+        # self.videos_frame = ctk.CTkFrame(self, width=1100)
+        # self.videos_frame.pack(pady=5, padx=10, side='left', fill='y', expand=False)
 
         self.video_buttons = []
         self.video_list = [
@@ -121,6 +125,14 @@ class PageTwo_VIDEO(ctk.CTkFrame):
                     "Video 2",
                     "Video 3",
                     "Video 4"]
+        
+        self.video_thumbnails = {
+            "Video 1": "video1_image.png",
+            "Video 2": "video2_image.jpg",
+            "Video 3": "video3_image.jpg",
+            "Video 4": "video4_image.jpg"
+            # Add more thumbnails for other videos as needed
+        }
 
     def delet_burger_menu_click(self):
         self.setting_frame.destroy()
@@ -138,7 +150,7 @@ class PageTwo_VIDEO(ctk.CTkFrame):
     
     def create_frame(self):
         self.setting_frame = ctk.CTkFrame(self, height=900)
-        self.setting_frame.pack(pady=5, padx=10, anchor=place.right, fill='y')
+        self.setting_frame.pack(pady=5, padx=10, side='right', fill='y', expand=False)
 
         self.button_bot_page = ctk.CTkButton(self.setting_frame, text="Chat Bot", font=('bold', 13), width=145,command=lambda: self.show_frame(PageOne_BOT))
         self.button_bot_page.pack(pady=5, padx=10)
@@ -173,6 +185,9 @@ class PageTwo_VIDEO(ctk.CTkFrame):
         self.controller.geometry(self._geom)
         self._geom=geom
     
+    def play_video(self, video):
+        print(f"Playing video: {video}")
+    
     # Search funs
     def search_videos(self, event):
         keyword = self.search_entry.get()
@@ -182,10 +197,19 @@ class PageTwo_VIDEO(ctk.CTkFrame):
         
         for video in self.video_list:
             if keyword.lower() in video.lower():
-                # Create new Buttons for Videos
-                video_button = ctk.CTkButton(self, text=video, width=200, height=200, command=lambda v=video: self.play_video(v))
-                video_button.pack(pady=5, padx=10)
+                thumbnail_filename = self.video_thumbnails.get(video, "default_thumbnail.png")  # Use a default thumbnail if not found
+                thumbnail_path = f"./assets/thumbnails/{thumbnail_filename}"  # Assuming your thumbnail images are in a folder named "thumbnails"
+                
+                thumbnail_image = Image.open(thumbnail_path)
+                thumbnail_image = thumbnail_image.resize((200, 200), Image.ANTIALIAS)
+                thumbnail_tk = ImageTk.PhotoImage(thumbnail_image)
+                
+                video_button = ctk.CTkButton(self, text=video, image=thumbnail_tk, compound="top", command=lambda v=video: self.play_video(v))
+                video_button.thumbnail_tk = thumbnail_tk  # Store a reference to avoid garbage collection
+                video_button.pack(pady=5, padx=10, expand=True, side='left')
                 self.video_buttons.append(video_button)
+
+
 
 # MAIN
 class MAIN(ctk.CTk):
@@ -202,7 +226,7 @@ class MAIN(ctk.CTk):
         scrollbar.set(value_1, value_2)
 
         # icon
-        p1 = tk.PhotoImage(file="./ico.png")
+        p1 = tk.PhotoImage(file="./icon.png")
         self.iconphoto(False, p1)
 
         self.frames = {}
