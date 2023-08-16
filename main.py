@@ -2,6 +2,7 @@ import tkinter as tk
 import customtkinter as ctk
 from PIL import Image
 import os
+import platform 
 
 # Places ANCHOR
 class place:
@@ -202,7 +203,10 @@ class MAIN(ctk.CTk):
         scrollbar.set(value_1, value_2)
 
         # icon
-        p1 = tk.PhotoImage(file="./ico.png")
+        if operating_system=="Linux":
+            p1 = tk.PhotoImage(file="./ico.png")
+        elif operating_system=="Windows":
+            p1 = tk.PhotoImage(file="ico.png")
         self.iconphoto(False, p1)
 
         self.frames = {}
@@ -218,5 +222,6 @@ class MAIN(ctk.CTk):
         frame.tkraise()
 
 if __name__ == "__main__":
+    operating_system=platform.system()
     app = MAIN()
     app.mainloop()
