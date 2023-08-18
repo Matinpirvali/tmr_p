@@ -68,7 +68,10 @@ class PageOne_BOT(ctk.CTkFrame):
 
 
 
-# BOOOOOOOOOOOOOOOOOOOOOOOOOOT
+
+
+
+# Video Pages
 
 class Page_video1(ctk.CTkFrame):
     def __init__(self, parent, controller):
@@ -185,6 +188,39 @@ class Page_video4(ctk.CTkFrame):
 
 
 
+
+# Profile Page GUI
+class Page_profile(ctk.CTkFrame):
+    def __init__(self, parent, controller):
+        ctk.CTkFrame.__init__(self, parent)
+        self.controller = controller
+        
+
+        # Full Screen Code
+        pad=1
+        self._geom='500x600+0+0'
+        controller.geometry("{0}x{1}+0+0".format(
+            controller.winfo_screenwidth()-pad, controller.winfo_screenheight()-pad))
+        controller.bind('<F11>',self.toggle_geom)
+
+        # Objects
+
+        
+
+        # label = ctk.CTkLabel(self, text="video4")
+        # label.pack(pady=10, padx=10)
+
+        # button = ctk.CTkButton(self, text="Back", command=lambda: controller.show_frame(PageTwo_VIDEO))
+        # button.pack(anchor=place.up_right)
+
+    # Full Screen function
+    def toggle_geom(self,event):
+        geom=self.controller.winfo_geometry()
+        print(geom,self._geom)
+        self.controller.geometry(self._geom)
+        self._geom=geom
+
+
 # Page two SHARE_VIDEO
 class PageTwo_VIDEO(ctk.CTkFrame):
 
@@ -259,10 +295,10 @@ class PageTwo_VIDEO(ctk.CTkFrame):
         self.setting_frame = ctk.CTkFrame(self, height=900)
         self.setting_frame.pack(pady=5, padx=10, side='right', fill='y', expand=False)
 
-        self.button_bot_page = ctk.CTkButton(self.setting_frame, text="Chat Bot", font=('bold', 13), width=145,command=lambda: self.show_frame(PageOne_BOT))
+        self.button_bot_page = ctk.CTkButton(self.setting_frame, text="Chat Bot", font=('bold', 13), width=145, command=lambda: self.show_frame(PageOne_BOT))
         self.button_bot_page.pack(pady=5, padx=10)
 
-        self.button_profile_page = ctk.CTkButton(self.setting_frame, text="Profile", font=('bold', 13), width=145)
+        self.button_profile_page = ctk.CTkButton(self.setting_frame, text="Profile", font=('bold', 13), width=145, command=lambda: self.show_frame(Page_profile))
         self.button_profile_page.pack(pady=5, padx=10)
 
         self.optionmenu_var = ctk.StringVar(value="List of study fields")  # set initial value
@@ -347,7 +383,7 @@ class MAIN(ctk.CTk):
 
         self.frames = {}
         
-        for F in (PageTwo_VIDEO, PageOne_BOT, Page_video1, Page_video2, Page_video3, Page_video4):
+        for F in (PageTwo_VIDEO, PageOne_BOT, Page_video1, Page_video2, Page_video3, Page_video4, Page_profile):
             frame = F(container, self)
             self.frames[F] = frame
             frame.grid(row=0, column=0, sticky="nsew")
