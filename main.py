@@ -70,12 +70,118 @@ class PageOne_BOT(ctk.CTkFrame):
 
 # BOOOOOOOOOOOOOOOOOOOOOOOOOOT
 
+class Page_video1(ctk.CTkFrame):
+    def __init__(self, parent, controller):
+        ctk.CTkFrame.__init__(self, parent)
+        self.controller = controller
+        
+
+        # Full Screen Code
+        pad=1
+        self._geom='500x600+0+0'
+        controller.geometry("{0}x{1}+0+0".format(
+            controller.winfo_screenwidth()-pad, controller.winfo_screenheight()-pad))
+        controller.bind('<F11>',self.toggle_geom)
+
+        # Objects
+
+        label = ctk.CTkLabel(self, text="video1")
+        label.pack(pady=10, padx=10)
+
+        button = ctk.CTkButton(self, text="Back", command=lambda: controller.show_frame(PageTwo_VIDEO))
+        button.pack(anchor=place.up_right) # anchor="ne"
+
+    # Full Screen function
+    def toggle_geom(self,event):
+        geom=self.controller.winfo_geometry()
+        print(geom,self._geom)
+        self.controller.geometry(self._geom)
+        self._geom=geom
+
+class Page_video2(ctk.CTkFrame):
+    def __init__(self, parent, controller):
+        ctk.CTkFrame.__init__(self, parent)
+        self.controller = controller
+        
+
+        # Full Screen Code
+        pad=1
+        self._geom='500x600+0+0'
+        controller.geometry("{0}x{1}+0+0".format(
+            controller.winfo_screenwidth()-pad, controller.winfo_screenheight()-pad))
+        controller.bind('<F11>',self.toggle_geom)
+
+        # Objects
+
+        label = ctk.CTkLabel(self, text="video2")
+        label.pack(pady=10, padx=10)
+
+        button = ctk.CTkButton(self, text="Back", command=lambda: controller.show_frame(PageTwo_VIDEO))
+        button.pack(anchor=place.up_right)
+
+    # Full Screen function
+    def toggle_geom(self,event):
+        geom=self.controller.winfo_geometry()
+        print(geom,self._geom)
+        self.controller.geometry(self._geom)
+        self._geom=geom
+
+class Page_video3(ctk.CTkFrame):
+    def __init__(self, parent, controller):
+        ctk.CTkFrame.__init__(self, parent)
+        self.controller = controller
+        
+
+        # Full Screen Code
+        pad=1
+        self._geom='500x600+0+0'
+        controller.geometry("{0}x{1}+0+0".format(
+            controller.winfo_screenwidth()-pad, controller.winfo_screenheight()-pad))
+        controller.bind('<F11>',self.toggle_geom)
+
+        # Objects
+
+        label = ctk.CTkLabel(self, text="video3")
+        label.pack(pady=10, padx=10)
+
+        button = ctk.CTkButton(self, text="Back", command=lambda: controller.show_frame(PageTwo_VIDEO))
+        button.pack(anchor=place.up_right)
+
+    # Full Screen function
+    def toggle_geom(self,event):
+        geom=self.controller.winfo_geometry()
+        print(geom,self._geom)
+        self.controller.geometry(self._geom)
+        self._geom=geom
 
 
+class Page_video4(ctk.CTkFrame):
+    def __init__(self, parent, controller):
+        ctk.CTkFrame.__init__(self, parent)
+        self.controller = controller
+        
 
+        # Full Screen Code
+        pad=1
+        self._geom='500x600+0+0'
+        controller.geometry("{0}x{1}+0+0".format(
+            controller.winfo_screenwidth()-pad, controller.winfo_screenheight()-pad))
+        controller.bind('<F11>',self.toggle_geom)
 
+        # Objects
 
+        label = ctk.CTkLabel(self, text="video4")
+        label.pack(pady=10, padx=10)
 
+        button = ctk.CTkButton(self, text="Back", command=lambda: controller.show_frame(PageTwo_VIDEO))
+        button.pack(anchor=place.up_right)
+
+    # Full Screen function
+    def toggle_geom(self,event):
+        geom=self.controller.winfo_geometry()
+        print(geom,self._geom)
+        self.controller.geometry(self._geom)
+        self._geom=geom
 
 
 
@@ -188,6 +294,16 @@ class PageTwo_VIDEO(ctk.CTkFrame):
     
     def play_video(self, video):
         print(f"Playing video: {video}")
+        if video == 'Video 1':
+            self.show_frame(Page_video1)
+        elif video == 'Video 2':
+            self.show_frame(Page_video2)
+        elif video == 'Video 3':
+            self.show_frame(Page_video3)
+        elif video == 'Video 4':
+            self.show_frame(Page_video4)
+        else:
+            print('Video Not found')
     
     # Search funs
     def search_videos(self, event):
@@ -231,17 +347,18 @@ class MAIN(ctk.CTk):
 
         self.frames = {}
         
-        for F in (PageTwo_VIDEO, PageOne_BOT):
+        for F in (PageTwo_VIDEO, PageOne_BOT, Page_video1, Page_video2, Page_video3, Page_video4):
             frame = F(container, self)
             self.frames[F] = frame
             frame.grid(row=0, column=0, sticky="nsew")
         
         self.show_frame(PageTwo_VIDEO)
+    
     def show_frame(self, cont):
         frame = self.frames[cont]
         frame.tkraise()
 
 if __name__ == "__main__":
-    operating_system=platform.system()
+    operating_system = platform.system()
     app = MAIN()
     app.mainloop()
