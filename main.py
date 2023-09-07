@@ -205,11 +205,11 @@ class Page_profile(ctk.CTkFrame):
 
 
 
-        # label = ctk.CTkLabel(self, text="video4")
+        # label = ctk.CTkLabel(self, text="page")
         # label.pack(pady=10, padx=10)
 
-        # button = ctk.CTkButton(self, text="Back", command=lambda: controller.show_frame(PageTwo_VIDEO))
-        # button.pack(anchor=place.up_right)
+        button = ctk.CTkButton(self, text="Back", command=lambda: controller.show_frame(PageTwo_VIDEO))
+        button.pack(anchor=place.up_right)
 
     # Full Screen function
     def toggle_geom(self,event):
@@ -232,11 +232,15 @@ class Page_setting(ctk.CTkFrame):
         controller.bind('<F11>',self.toggle_geom)
 
         # Objects
-        switch_var = ctk.StringVar(value="off")
 
+        button = ctk.CTkButton(self, text="Back", command=lambda: controller.show_frame(PageTwo_VIDEO))
+        button.pack(anchor=place.up_right)
+
+
+        self.switch_var = ctk.StringVar(value="off")
 
         switch_1 = ctk.CTkSwitch(master=self, text="Dark mode", command=self.switch_event,
-                                        variable=switch_var, onvalue="on", offvalue="off")
+                                        variable=self.switch_var, onvalue="on", offvalue="off")
         switch_1.pack(padx=20, pady=10)
 
     def switch_event(self):
