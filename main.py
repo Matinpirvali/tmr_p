@@ -31,6 +31,11 @@ class place:
     center = 'center'
 
 
+# welcome panel
+
+    
+
+
 # Page one CHATBOT
 class PageOne_BOT(ctk.CTkFrame):
     def __init__(self, parent, controller):
@@ -59,15 +64,6 @@ class PageOne_BOT(ctk.CTkFrame):
         print(geom,self._geom)
         self.controller.geometry(self._geom)
         self._geom=geom
-
-
-
-
-
-
-
-
-
 
 
 
@@ -222,6 +218,40 @@ class Page_profile(ctk.CTkFrame):
         self.controller.geometry(self._geom)
         self._geom=geom
 
+class Page_setting(ctk.CTkFrame):
+    def __init__(self, parent, controller):
+        ctk.CTkFrame.__init__(self, parent)
+        self.controller = controller
+
+
+        # Full Screen Code
+        pad=1
+        self._geom='500x600+0+0'
+        controller.geometry("{0}x{1}+0+0".format(
+            controller.winfo_screenwidth()-pad, controller.winfo_screenheight()-pad))
+        controller.bind('<F11>',self.toggle_geom)
+
+        # Objects
+        switch_var = ctk.StringVar(value="off")
+
+
+        switch_1 = ctk.CTkSwitch(master=self, text="Dark mode", command=self.switch_event,
+                                        variable=switch_var, onvalue="on", offvalue="off")
+        switch_1.pack(padx=20, pady=10)
+
+    def switch_event(self):
+        print("switch toggled, current value:", self.switch_var.get())
+        if self.switch_var.get() == 'on':
+            ctk.set_appearance_mode('dark')
+        else:
+            ctk.set_appearance_mode('light')
+
+    # Full Screen function
+    def toggle_geom(self,event):
+        geom=self.controller.winfo_geometry()
+        print(geom,self._geom)
+        self.controller.geometry(self._geom)
+        self._geom=geom
 
 # Page two SHARE_VIDEO
 class PageTwo_VIDEO(ctk.CTkFrame):
@@ -300,6 +330,9 @@ class PageTwo_VIDEO(ctk.CTkFrame):
         self.button_bot_page = ctk.CTkButton(self.setting_frame, text="Chat Bot", font=('bold', 13), width=145, command=lambda: self.show_frame(PageOne_BOT))
         self.button_bot_page.pack(pady=5, padx=10)
 
+        self.button_setting_page = ctk.CTkButton(self.setting_frame, text="Setting", font=('bold', 13), width=145, command=lambda: self.show_frame(Page_setting))
+        self.button_setting_page.pack(pady=5, padx=10)
+
         self.button_profile_page = ctk.CTkButton(self.setting_frame, text="Profile", font=('bold', 13), width=145, command=lambda: self.show_frame(Page_profile))
         self.button_profile_page.pack(pady=5, padx=10)
 
@@ -366,9 +399,44 @@ class PageTwo_VIDEO(ctk.CTkFrame):
 
 
 # MAIN
+
+class WelcomePage(ctk.CTk):
+    def __init__(self):
+        super().__init__()
+        self.title('Welcome')
+        self.geometry('400x300')
+
+        p1 = tk.PhotoImage(file="icon.png")
+        self.iconphoto(False, p1)
+
+        self.image = Image.open("icon.png")
+
+        new_width = 200
+        new_height = 150
+        self.image = self.image.resize((new_width, new_height), Image.ANTIALIAS)
+
+        self.photo = ImageTk.PhotoImage(self.image)
+
+        self.label = ctk.CTkLabel(self, image=self.photo, text='')
+        self.label.pack(pady=20)
+
+        self.welcome_label = ctk.CTkLabel(self, text='Welcome to the app!', font=('roboto', 25))
+        self.welcome_label.pack()
+
+        self.after(5000, self.close_welcome)
+
+    def close_welcome(self):
+        self.destroy() 
+        self.open_main_app()
+
+    def open_main_app(self):
+        operating_system = platform.system()
+        app = MAIN()
+        app.mainloop()
 class MAIN(ctk.CTk):
     def __init__(self):
         ctk.CTk.__init__(self)
+        # ctk.set_default_color_theme('light')
         container = ctk.CTkFrame(self)
         container.pack(side="top", fill="both", expand=True)
         container.grid_rowconfigure(0, weight=1)
@@ -380,12 +448,12 @@ class MAIN(ctk.CTk):
         scrollbar.set(value_1, value_2)
 
         # icon
-        p1 = tk.PhotoImage(file="./icon.png")
+        p1 = tk.PhotoImage(file="icon.png")
         self.iconphoto(False, p1)
 
         self.frames = {}
 
-        for F in (PageTwo_VIDEO, PageOne_BOT, Page_video1, Page_video2, Page_video3, Page_video4, Page_profile):
+        for F in (PageTwo_VIDEO, PageOne_BOT, Page_video1, Page_video2, Page_video3, Page_video4, Page_profile, Page_setting):
             frame = F(container, self)
             self.frames[F] = frame
             frame.grid(row=0, column=0, sticky="nsew")
@@ -397,6 +465,5 @@ class MAIN(ctk.CTk):
         frame.tkraise()
 
 if __name__ == "__main__":
-    operating_system = platform.system()
-    app = MAIN()
-    app.mainloop()
+    welcome_page = WelcomePage()
+    welcome_page.mainloop()
